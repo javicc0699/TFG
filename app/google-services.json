@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "181421282560",
+    "project_id": "helldivers-hub-builds",
+    "storage_bucket": "helldivers-hub-builds.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:181421282560:android:0ae871b1e1f29dd5b78fe5",
+        "android_client_info": {
+          "package_name": "com.example.helldiversbuildhub"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDYZOBwKwy9evj3Yv7no8GPQBbTLsF2ABU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

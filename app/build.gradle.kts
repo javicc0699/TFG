@@ -1,5 +1,6 @@
 plugins {
     alias(libs.plugins.android.application)
+    alias(libs.plugins.google.services)
 }
 
 android {
@@ -42,4 +43,11 @@ dependencies {
     testImplementation(libs.junit)
     androidTestImplementation(libs.ext.junit)
     androidTestImplementation(libs.espresso.core)
+
+    // Esto es para Firebase
+    implementation("com.google.firebase:firebase-auth:22.1.1")
+    implementation("com.google.android.gms:play-services-auth:20.6.0")
+
+    apply(plugin = "com.google.gms.google-services")
+
 }
