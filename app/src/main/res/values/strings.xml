@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">HelldiversBuildHub</string>
+    <string name="percText">Liberación</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>
