@@ -8,4 +8,21 @@
     <color name="search_opaque">#ffaa3f</color>
     <color name="selected_background">#ffaa3f</color>
     <color name="default_background">#3d3d3d</color>
+
+    <!-- Colores para la invasion de terminidos !-->
+    <color name="terminidos_color_fondo">#FFF9C4</color>
+    <color name="terminidos_color_borde">#FBC02D</color>
+
+    <!-- Colores para la invasion de iluminados !-->
+    <color name="iluminados_color_fondo">#BBDEFB</color>
+    <color name="iluminados_color_borde">#1976D2</color>
+
+    <!-- Colores para la invasion de bots !-->
+    <color name="bots_color_fondo">#FFCDD2</color>
+    <color name="bots_color_borde">#D32F2F</color>
+
+    <!-- Colores por defecto !-->
+    <color name="default_fondo">#FFFFFF</color>
+    <color name="default_borde">#CCCCCC</color>
+
 </resources>
