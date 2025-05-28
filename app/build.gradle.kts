@@ -30,6 +30,9 @@ android {
         sourceCompatibility = JavaVersion.VERSION_1_8
         targetCompatibility = JavaVersion.VERSION_1_8
     }
+    buildFeatures {
+        viewBinding = true
+    }
 }
 
 dependencies {
@@ -40,6 +43,12 @@ dependencies {
     implementation(libs.constraintlayout)
     implementation ("com.squareup.retrofit2:retrofit:2.9.0")
     implementation ("com.squareup.retrofit2:converter-gson:2.9.0")
+    implementation(libs.annotation)
+    implementation(libs.lifecycle.livedata.ktx)
+    implementation(libs.lifecycle.viewmodel.ktx)
+    implementation(libs.leanback)
+    implementation(libs.glide)
+    implementation(libs.firebase.firestore)
     testImplementation(libs.junit)
     androidTestImplementation(libs.ext.junit)
     androidTestImplementation(libs.espresso.core)
@@ -47,6 +56,7 @@ dependencies {
     // Esto es para Firebase
     implementation("com.google.firebase:firebase-auth:22.1.1")
     implementation("com.google.android.gms:play-services-auth:20.6.0")
+
 
     apply(plugin = "com.google.gms.google-services")
 

@@ -1,6 +1,7 @@
 package com.example.helldiversbuildhub;
 
 import android.os.Bundle;
+import android.util.Log;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -11,6 +12,10 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.firebase.FirebaseApp;
+import com.google.firebase.firestore.FirebaseFirestore;
+
+import java.util.Arrays;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -20,11 +25,14 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        FirebaseApp.initializeApp(this);
         setContentView(R.layout.activity_main);
-
+        FirebaseFirestore db = FirebaseFirestore.getInstance();
         bottomNavigationView = findViewById(R.id.bottom_navigation);
 
-        // Fragmento inicial
+      //  cargarBuildPrueba(db);
+
+
         loadFragment(new PlanetsFragment());
 
         bottomNavigationView.setOnItemSelectedListener(item -> {
@@ -54,5 +62,30 @@ public class MainActivity extends AppCompatActivity {
                 .beginTransaction()
                 .replace(R.id.frame_container, fragment)
                 .commit();
+    }
+
+    private void cargarBuildPrueba(FirebaseFirestore db) {
+
+        String buildId = db.collection("builds").document().getId();
+
+        // Crear build
+        Build build = new Build(
+                buildId,
+                "user123",
+                "LAS-16 Sickle",
+                "P-19 Redeemer",
+                "Engineering Kit",
+                Arrays.asList("Eagle Airstrike", "Reinforce", "Supply Pack", "Machine Gun"),
+                0,
+                0,
+                "2025-05-27"
+        );
+
+        // Guardarla en Firestore
+        db.collection("builds")
+                .document(buildId)
+                .set(build)
+                .addOnSuccessListener(aVoid -> Log.d("FIREBASE", "Build subida correctamente"))
+                .addOnFailureListener(e -> Log.e("FIREBASE", "Error al subir la build", e));
     }
 }

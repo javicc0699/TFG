@@ -1,102 +1,97 @@
-<?xml version="1.0" encoding="utf-8"?>
-<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+<com.google.android.material.card.MaterialCardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/materialCardView"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_margin="8dp"
     app:cardCornerRadius="10dp"
-    app:cardElevation="6dp"
-    app:strokeColor="@color/design_default_color_error"
-    app:strokeWidth="2dp">
+    app:cardElevation="6dp">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="200sp">
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="12dp">
 
-        <TextView
-            android:id="@+id/planetNameTv"
-            android:layout_width="wrap_content"
+
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:layout_marginEnd="113dp"
-            android:text="TextView"
-            app:layout_constraintEnd_toStartOf="@+id/factionIcon"
-            app:layout_constraintTop_toTopOf="parent" />
+            android:orientation="horizontal"
+            android:gravity="center_vertical">
 
-        <TextView
-            android:id="@+id/playersTv"
-            android:layout_width="wrap_content"
+            <ImageView
+                android:id="@+id/helmetIcon"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@drawable/helldiver_logo"/>
+
+            <TextView
+                android:id="@+id/playersTv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="6dp"
+                android:text="1234"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:id="@+id/planetNameTv"
+                android:layout_width="219dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_weight="1"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:text="@string/loadingtext"
+                android:textAlignment="center"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:id="@+id/factionIcon"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:src="@drawable/terminid_icon"/>
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:layout_marginEnd="60dp"
-            android:text="TextView"
-            app:layout_constraintEnd_toStartOf="@+id/planetNameTv"
-            app:layout_constraintTop_toTopOf="parent" />
+            android:orientation="horizontal"
+            android:layout_marginTop="12dp"
+            android:gravity="center_vertical">
 
-        <ImageView
-            android:id="@+id/helmetIcon"
-            android:layout_width="34dp"
-            android:layout_height="25dp"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="8dp"
-            app:layout_constraintEnd_toStartOf="@+id/playersTv"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/helldiver_logo" />
+            <TextView
+                android:id="@+id/percentageTv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Liberación:" />
 
-        <ImageView
-            android:id="@+id/factionIcon"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:layout_marginTop="8dp"
-            android:layout_marginEnd="16dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/terminid_icon" />
+            <ProgressBar
+                android:id="@+id/progressBar"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="8dp"/>
 
-        <TextView
-            android:id="@+id/percentageTv"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="60dp"
-            android:text="@string/percText"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/helmetIcon" />
+            <TextView
+                android:id="@+id/libRate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="50%"/>
+        </LinearLayout>
 
-        <ProgressBar
-            android:id="@+id/progressBar"
-            style="?android:attr/progressBarStyleHorizontal"
-            android:layout_width="164dp"
-            android:layout_height="14dp"
-            android:layout_marginStart="33dp"
-            android:layout_marginTop="66dp"
-            android:layout_marginEnd="43dp"
-            app:layout_constraintEnd_toStartOf="@+id/libRate"
-            app:layout_constraintStart_toEndOf="@+id/percentageTv"
-            app:layout_constraintTop_toBottomOf="@+id/planetNameTv" />
-
-        <TextView
-            android:id="@+id/libRate"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="43dp"
-            android:layout_marginEnd="16dp"
-            android:text="TextView"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/factionIcon" />
 
         <ImageView
             android:id="@+id/biomeImg"
-            android:layout_width="393dp"
-            android:layout_height="57dp"
-            android:layout_marginTop="30dp"
-            android:layout_marginEnd="2dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/percentageTv"
-            app:srcCompat="@drawable/moon_biome" />
-    </androidx.constraintlayout.widget.ConstraintLayout>
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:adjustViewBounds="true"
+            android:scaleType="centerCrop"
+            android:src="@drawable/moon_biome"/>
+    </LinearLayout>
 </com.google.android.material.card.MaterialCardView>

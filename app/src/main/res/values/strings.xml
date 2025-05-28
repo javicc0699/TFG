@@ -3,4 +3,31 @@
     <string name="percText">Liberación</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_activity_login">LoginActivity</string>
+    <string name="prompt_email">Email</string>
+    <string name="prompt_password">Password</string>
+    <string name="action_sign_in">Sign in or register</string>
+    <string name="action_sign_in_short">Sign in</string>
+    <string name="welcome">"Welcome !"</string>
+    <string name="invalid_username">Not a valid username</string>
+    <string name="invalid_password">Password must be >5 characters</string>
+    <string name="login_failed">"Login failed"</string>
+    <string name="title_activity_login_activity">Leanback LoginActivityActivity</string>
+    <string name="browse_title">Videos by Your Company</string>
+    <string name="related_movies">Related Videos</string>
+    <string name="grid_view">Grid View</string>
+    <string name="error_fragment">Error Fragment</string>
+    <string name="personal_settings">Personal Settings</string>
+    <string name="watch_trailer_1">Watch trailer</string>
+    <string name="watch_trailer_2">FREE</string>
+    <string name="rent_1">Rent By Day</string>
+    <string name="rent_2">From $1.99</string>
+    <string name="buy_1">Buy and Own</string>
+    <string name="buy_2">AT $9.99</string>
+    <string name="movie">Movie</string>
+
+    <!-- Error messages -->
+    <string name="error_fragment_message">An error occurred</string>
+    <string name="dismiss_error">Dismiss</string>
+    <string name="loadingtext">Cargando...</string>
 </resources>
