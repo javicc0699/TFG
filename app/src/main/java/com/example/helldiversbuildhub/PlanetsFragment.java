@@ -13,6 +13,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import java.util.Collections;
 import java.util.List;
 
 import retrofit2.Call;
@@ -43,6 +44,7 @@ public class PlanetsFragment extends Fragment {
             public void onResponse(Call<List<Planet>> call, Response<List<Planet>> response) {
                 if (response.isSuccessful()) {
                     List<Planet> planets = response.body();
+                    Collections.sort(planets, (p1, p2) -> Integer.compare(p2.getPlayers(), p1.getPlayers())); // Esto hace que se ordenen los planetas dependiendo del numero de jugadores.
                     adapter = new PlanetAdapter(planets);
                     recyclerView.setAdapter(adapter);
                 } else {
