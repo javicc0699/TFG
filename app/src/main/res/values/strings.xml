@@ -30,4 +30,9 @@
     <string name="error_fragment_message">An error occurred</string>
     <string name="dismiss_error">Dismiss</string>
     <string name="loadingtext">Cargando...</string>
+    <string name="potenciadorEsp">Potenciador</string>
+    <string name="pasivaTxt">Pasiva de la Armadura</string>
+    <string name="secundariaTxt">Arma Secundaria</string>
+    <string name="primariaTxt">Arma Primaria</string>
+    <string name="subirTxt">Subir</string>
 </resources>

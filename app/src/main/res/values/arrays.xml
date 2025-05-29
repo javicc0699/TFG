@@ -1,0 +1,258 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- Arrays de Strings e Iconos para las estratagemas -->
+
+    <string-array name="estratagemas_nombre">
+
+        <!-- Águilas !-->
+        <item>Ataque de Águila ametralladora</item>
+        <item>Ataque de Águila racimo</item>
+        <item>Ataque de Águila 500kg</item>
+        <item>Ataque de Águila 110mm</item>
+        <item>Ataque de Águila aéreo</item>
+        <item>Ataque de Águila de humo</item>
+        <item>Ataque de Águila de napalm</item>
+
+        <!-- Orbitales !-->
+        <item>Orbital Aéreo</item>
+        <item>Orbital Caminante</item>
+        <item>Orbital de 120mm</item>
+        <item>Orbital EMP</item>
+        <item>Orbital Gas</item>
+        <item>Orbital Gatling</item>
+        <item>Orbital Humo</item>
+        <item>Orbital Láser</item>
+        <item>Orbital Napalm</item>
+        <item>Orbital de Precisión</item>
+        <item>Orbital de Riel</item>
+        <item>Orbital de 380mm</item>
+
+        <!-- Apoyo !-->
+        <item>Ametralladora</item>
+        <item>Ametralladora Pesada</item>
+        <item>Una Única Bandera</item>
+        <item>Cañón Automático</item>
+        <item>Cañón de Riel</item>
+        <item>Comando</item>
+        <item>Esterilizador</item>
+        <item>Cañón de Explosión Aérea</item>
+        <item>Lanza</item>
+        <item>Lanzaarcos</item>
+        <item>Lanzagranadas</item>
+        <item>Lanzallamas</item>
+        <item>Lanzamisiles Desechable</item>
+        <item>Cañón Láser</item>
+        <item>Leal</item>
+        <item>Cañón Quasar</item>
+        <item>Rifle Antiequipamiento</item>
+        <item>Rifle sin Retroceso</item>
+        <item>Lanzamisiles W.A.S.P</item>
+
+        <!-- Mochilas, exotrajes y vehículos !-->
+        <item>Mochila Rover "Aliento de Perro"</item>
+        <item>Mochila Rover "Perro Guardián Láser"</item>
+        <item>Mochila Rover "Perro Guardián Liberador"</item>
+        <item>Mochila Escudo Balístico</item>
+        <item>Mochila Escudo Direccional</item>
+        <item>Mochila Generadora de Escudo</item>
+        <item>Mochila de Suministros</item>
+        <item>Mochila Planeadora</item>
+        <item>Mochila de Salto</item>
+        <item>Bomba Hell Portátil</item>
+        <item>Exotraje Emancipador</item>
+        <item>Exotraje Patriota</item>
+        <item>Vehículo de Reconocimiento</item>
+
+        <!-- Centinelas !-->
+        <item>Relevo Generador de Escudo</item>
+        <item>Centinela con Ametralladora</item>
+        <item>Centinela con Cañón Automático</item>
+        <item>Centinela con Cohete</item>
+        <item>Centinela EMS</item>
+        <item>Centinela con Gatling</item>
+        <item>Centinela Llameante</item>
+        <item>Centinela con Mortero</item>
+        <item>Campo de Minas Antipersona</item>
+        <item>Campo de Minas Antitanque</item>
+        <item>Campo de Minas de Gas</item>
+        <item>Campo de Minas Incendiarias</item>
+        <item>Parapeto con Lanzagranadas</item>
+        <item>Emplazamiento Ametralladora Pesada</item>
+        <item>Emplazamiento Antitanque</item>
+        <item>Torre Tesla</item>
+
+
+
+
+
+
+    </string-array>
+
+    <string-array name="estratagemas_iconos">
+
+        <!-- Águilas !-->
+        <item>@drawable/aguilaametralladora</item>
+        <item>@drawable/aguilaracimo</item>
+        <item>@drawable/aguilanuclear</item>
+        <item>@drawable/cientodiez</item>
+        <item>@drawable/aguilaereo</item>
+        <item>@drawable/aguilahumo</item>
+        <item>@drawable/aguilanapalm</item>
+
+        <!-- Orbitales !-->
+       <item>@drawable/orbitalairbust</item>
+       <item>@drawable/orbitalcaminante</item>
+       <item>@drawable/orbitalcientoveinte</item>
+       <item>@drawable/orbitalems</item>
+       <item>@drawable/orbitalgas</item>
+       <item>@drawable/orbitalgatling</item>
+       <item>@drawable/orbitalhumo</item>
+       <item>@drawable/orbitallaser</item>
+       <item>@drawable/orbitalnapalm</item>
+       <item>@drawable/orbitalprecision</item>
+       <item>@drawable/orbitalriel</item>
+       <item>@drawable/orbitaltresochenta</item>
+
+        <!-- Apoyo !-->
+        <item>@drawable/ametralladora</item>
+        <item>@drawable/ametralladorapesada</item>
+        <item>@drawable/bandera</item>
+        <item>@drawable/canyonautomatico</item>
+        <item>@drawable/canyonriel</item>
+        <item>@drawable/comando</item>
+        <item>@drawable/esterilizador</item>
+        <item>@drawable/explosionaerea</item>
+        <item>@drawable/lanza</item>
+        <item>@drawable/lanzaarcos</item>
+        <item>@drawable/lanzallamas</item>
+        <item>@drawable/lanzagranadas</item>
+        <item>@drawable/lanzamisilesdesechable</item>
+        <item>@drawable/laser</item>
+        <item>@drawable/leal</item>
+        <item>@drawable/quasar</item>
+        <item>@drawable/rifleantiarmadura</item>
+        <item>@drawable/sinretroceso</item>
+        <item>@drawable/wasp</item>
+
+        <!-- Mochilas, exotrajes y vehículos !-->
+        <item>@drawable/alientoperro</item>
+        <item>@drawable/perrolaser</item>
+        <item>@drawable/perroliberador</item>
+        <item>@drawable/escudobalistico</item>
+        <item>@drawable/escudodireccional</item>
+        <item>@drawable/generadorescudo</item>
+        <item>@drawable/mochilasuministros</item>
+        <item>@drawable/mochilaplaneo</item>
+        <item>@drawable/mochilasalto</item>
+        <item>@drawable/hellbombportatil</item>
+        <item>@drawable/exotrajeemancipador</item>
+        <item>@drawable/exotrajepatriota</item>
+        <item>@drawable/coche</item>
+
+
+        <!-- Centinelas !-->
+        <item>@drawable/bobinadeescudo</item>
+        <item>@drawable/centinelaametrallador</item>
+        <item>@drawable/centinelaautomatico</item>
+        <item>@drawable/centinelacohete</item>
+        <item>@drawable/centinelaemp</item>
+        <item>@drawable/centinelagatling</item>
+        <item>@drawable/centinelallameante</item>
+        <item>@drawable/centinelamortero</item>
+        <item>@drawable/minaantipersona</item>
+        <item>@drawable/minasantitanque</item>
+        <item>@drawable/minasdegas</item>
+        <item>@drawable/minasincendiarias</item>
+        <item>@drawable/parapeto</item>
+        <item>@drawable/torretaametralladora</item>
+        <item>@drawable/torretaantitanque</item>
+        <item>@drawable/torretesla</item>
+
+    </string-array>
+
+
+    <!-- Arrays de Strings e Iconos para las armas primarias -->
+    <string-array name="armas_primarias">
+
+        <item>Ablandador</item>
+        <item>Abrasador</item>
+        <item>Adjudicadora</item>
+        <item>Alto Ahí</item>
+        <item>Ballesta Explosiva</item>
+        <item>Barbacoa</item>
+        <item>Blitzer</item>
+        <item>Caballero</item>
+        <item>Castigadora 8S</item>
+        <item>Castigadora</item>
+        <item>Castigadora de Plasma</item>
+        <item>Constitución</item>
+        <item>Defensor</item>
+        <item>Diligencia</item>
+        <item>Diligencia contra Francotirador</item>
+        <item>Dominador</item>
+        <item>Enmienda</item>
+        <item>Erupcionador</item>
+        <item>Guadaña</item>
+        <item>Hoz</item>
+        <item>Hoz de doble filo</item>
+        <item>Incendiador</item>
+        <item>Liberador</item>
+        <item>Liberador Carabina</item>
+        <item>Liberador Contusivo</item>
+        <item>Liberador Penetrador</item>
+        <item>Ojo de Halcón</item>
+        <item>Rompedor Pulveriza y Reza</item>
+        <item>Pummeler</item>
+        <item>Purificador</item>
+        <item>Reprimenda</item>
+        <item>Rifle Acelerador</item>
+        <item>Rifle de Asalto</item>
+        <item>Rompedor</item>
+        <item>Rompedor Incendiario</item>
+        <item>SMG</item>
+
+    </string-array>
+
+    <string-array name="armas_primarias_iconos">
+
+        <item>@drawable/ablandador</item>
+        <item>@drawable/abrasador</item>
+        <item>@drawable/adjudicadora</item>
+        <item>@drawable/altoahi</item>
+        <item>@drawable/ballestaexplosiva</item>
+        <item>@drawable/barbacoa</item>
+        <item>@drawable/blitzer</item>
+        <item>@drawable/caballero</item>
+        <item>@drawable/casticadorados</item>
+        <item>@drawable/castigadora</item>
+        <item>@drawable/castigadoradeplasma</item>
+        <item>@drawable/constitucion</item>
+        <item>@drawable/defensor</item>
+        <item>@drawable/diligencia</item>
+        <item>@drawable/diligenciacontrafrancotirador</item>
+        <item>@drawable/dominador</item>
+        <item>@drawable/enmienda</item>
+        <item>@drawable/erupcionador</item>
+        <item>@drawable/guadanya</item>
+        <item>@drawable/hoz</item>
+        <item>@drawable/hozdoblefilo</item>
+        <item>@drawable/incendiador</item>
+        <item>@drawable/liberador</item>
+        <item>@drawable/liberadorcarabina</item>
+        <item>@drawable/liberadorcarabina</item>
+        <item>@drawable/liberadorcontusivo</item>
+        <item>@drawable/liberadorpenetrador</item>
+        <item>@drawable/ojodehalcon</item>
+        <item>@drawable/pulverizayreza</item>
+        <item>@drawable/pummeler</item>
+        <item>@drawable/purificador</item>
+        <item>@drawable/reprimenda</item>
+        <item>@drawable/rifleacelerador</item>
+        <item>@drawable/rifledeasalto</item>
+        <item>@drawable/rompedor</item>
+        <item>@drawable/rompedorincendiario</item>
+        <item>@drawable/smg</item>
+
+    </string-array>
+</resources>

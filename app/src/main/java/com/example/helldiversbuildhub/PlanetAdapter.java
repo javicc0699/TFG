@@ -22,8 +22,7 @@ public class PlanetAdapter extends RecyclerView.Adapter<PlanetAdapter.PlanetView
 
     @Override
     public PlanetViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext())
-                .inflate(R.layout.planet_item, parent, false);
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.planet_item, parent, false);
         return new PlanetViewHolder(view);
     }
 
@@ -31,12 +30,12 @@ public class PlanetAdapter extends RecyclerView.Adapter<PlanetAdapter.PlanetView
     public void onBindViewHolder(PlanetViewHolder holder, int position) {
         Planet planet = planetList.get(position);
 
-        // Texto
+        // Se asignan los datos de cada planeta.
         holder.planetNameTv.setText(planet.getName());
         holder.playersTv.setText(String.valueOf(planet.getPlayers()));
         holder.libRate.setText(planet.getPercentage() + "%");
 
-        // Decide colores e ícono según la facción
+        // Aqui se ponen los colores acorde con el tipo de entrada (facción).
         int bgColor, borderColor, iconRes;
         switch (planet.getFaction()) {
             case "Terminids":
@@ -64,7 +63,7 @@ public class PlanetAdapter extends RecyclerView.Adapter<PlanetAdapter.PlanetView
                 break;
         }
 
-
+        // Aqui se asignan los colores obtenidos del switch
         holder.card.setCardBackgroundColor(bgColor);
         holder.card.setStrokeColor(borderColor);
         holder.card.setStrokeWidth(holder.itemView.getResources().getDimensionPixelSize(R.dimen.card_stroke_width));
