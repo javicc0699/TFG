@@ -12,7 +12,20 @@
           "package_name": "com.example.helldiversbuildhub"
         }
       },
-      "oauth_client": [],
+      "oauth_client": [
+        {
+          "client_id": "181421282560-1uh08ougnelar1a6fijmht0dli645ikp.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.helldiversbuildhub",
+            "certificate_hash": "c297102fae964c0033d2125cb20656a464cf03a2"
+          }
+        },
+        {
+          "client_id": "181421282560-tfvufvs9l85jt4o848qupt1n1ait650f.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
       "api_key": [
         {
           "current_key": "AIzaSyDYZOBwKwy9evj3Yv7no8GPQBbTLsF2ABU"
@@ -20,7 +33,12 @@
       ],
       "services": {
         "appinvite_service": {
-          "other_platform_oauth_client": []
+          "other_platform_oauth_client": [
+            {
+              "client_id": "181421282560-eabinikk13cq97caf9ekmss62ogehm9n.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
         }
       }
     }

@@ -12,7 +12,7 @@
         android:orientation="vertical"
         android:padding="16dp">
 
-        <!-- Stratagem spinners row 1 -->
+        <!-- Spinner Estratagemos -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -22,7 +22,6 @@
                 android:id="@+id/firstStratSpn"
                 android:layout_width="35dp"
                 android:layout_height="35dp"
-                android:layout_marginEnd="8dp"
                 android:layout_weight="1"
                 android:spinnerMode="dialog" />
 
@@ -30,12 +29,12 @@
                 android:id="@+id/secondStratSpn"
                 android:layout_width="35dp"
                 android:layout_height="35dp"
-                android:layout_marginStart="8dp"
                 android:layout_weight="1"
-                android:spinnerMode="dialog" />
+                android:spinnerMode="dialog"
+                android:layout_marginStart="8dp" />
         </LinearLayout>
 
-        <!-- Stratagem spinners row 2 -->
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -46,7 +45,6 @@
                 android:id="@+id/thirdStratSpn"
                 android:layout_width="35dp"
                 android:layout_height="35dp"
-                android:layout_marginEnd="8dp"
                 android:layout_weight="1"
                 android:spinnerMode="dialog" />
 
@@ -54,12 +52,12 @@
                 android:id="@+id/fourthStratSpn"
                 android:layout_width="35dp"
                 android:layout_height="35dp"
-                android:layout_marginStart="8dp"
                 android:layout_weight="1"
-                android:spinnerMode="dialog" />
+                android:spinnerMode="dialog"
+                android:layout_marginStart="8dp" />
         </LinearLayout>
 
-        <!-- Stratagem images -->
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -71,40 +69,39 @@
                 android:layout_width="0dp"
                 android:layout_height="70dp"
                 android:layout_weight="1"
-                android:src="@drawable/orbitalairbust"
-                android:adjustViewBounds="true" />
+                android:layout_margin="4dp"
+                android:adjustViewBounds="true"
+                android:src="@drawable/recuadro" />
 
             <ImageView
                 android:id="@+id/secondStratImg"
                 android:layout_width="0dp"
                 android:layout_height="70dp"
-                android:layout_marginStart="8dp"
-                android:layout_marginEnd="8dp"
                 android:layout_weight="1"
+                android:layout_margin="4dp"
                 android:adjustViewBounds="true"
-                android:src="@drawable/ametralladora" />
+                android:src="@drawable/recuadro" />
 
             <ImageView
                 android:id="@+id/thirdStratImg"
                 android:layout_width="0dp"
                 android:layout_height="70dp"
-                android:layout_marginStart="8dp"
-                android:layout_marginEnd="8dp"
                 android:layout_weight="1"
+                android:layout_margin="4dp"
                 android:adjustViewBounds="true"
-                android:src="@drawable/perroliberador" />
+                android:src="@drawable/recuadro" />
 
             <ImageView
                 android:id="@+id/fourthStratImg"
                 android:layout_width="0dp"
                 android:layout_height="70dp"
                 android:layout_weight="1"
-                android:src="@drawable/orbitalhumo"
+                android:layout_margin="4dp"
                 android:adjustViewBounds="true"
-                android:layout_marginStart="8dp" />
+                android:src="@drawable/recuadro" />
         </LinearLayout>
 
-        <!-- Primary Weapon -->
+        <!-- Arma Primaria -->
         <TextView
             android:id="@+id/textPrimaryLabel"
             android:layout_width="wrap_content"
@@ -130,11 +127,11 @@
                 android:id="@+id/primaryWpnImg"
                 android:layout_width="115dp"
                 android:layout_height="70dp"
-                android:src="@drawable/liberadorcontusivo"
-                android:adjustViewBounds="true" />
+                android:adjustViewBounds="true"
+                android:src="@drawable/bordearmas" />
         </LinearLayout>
 
-        <!-- Secondary Weapon -->
+        <!-- Arma Secundaria -->
         <TextView
             android:id="@+id/textSecondaryLabel"
             android:layout_width="wrap_content"
@@ -160,11 +157,11 @@
                 android:id="@+id/secondaryWpnImg"
                 android:layout_width="115dp"
                 android:layout_height="70dp"
-                android:src="@drawable/liberadorcontusivo"
-                android:adjustViewBounds="true" />
+                android:adjustViewBounds="true"
+                android:src="@drawable/bordearmas" />
         </LinearLayout>
 
-        <!-- Armor Passive -->
+        <!-- Pasivas de las armaduras -->
         <TextView
             android:id="@+id/textArmorLabel"
             android:layout_width="wrap_content"
@@ -194,7 +191,7 @@
                 android:adjustViewBounds="true" />
         </LinearLayout>
 
-        <!-- Booster -->
+        <!-- Potenciadores -->
         <TextView
             android:id="@+id/textBoosterLabel"
             android:layout_width="wrap_content"
@@ -221,10 +218,10 @@
                 android:layout_width="70dp"
                 android:layout_height="70dp"
                 android:adjustViewBounds="true"
-                android:src="@drawable/acolchada" />
+                android:src="@drawable/plantillabooster" />
         </LinearLayout>
 
-        <!-- Buttons -->
+        <!-- Botones -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -236,6 +233,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:backgroundTint="#FF0000"
                 android:text="Reset"
                 app:cornerRadius="5dp" />
 
@@ -245,6 +243,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
                 android:layout_weight="1"
+                android:backgroundTint="#FFEB3B"
                 android:text="@string/subirTxt"
                 app:cornerRadius="5dp" />
         </LinearLayout>

@@ -1,6 +1,7 @@
 package com.example.helldiversbuildhub;
 
 import android.content.res.TypedArray;
+import android.media.Image;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -29,6 +30,10 @@ public class UploadFragment extends Fragment {
     private ImageView primaryWpnImg;
     private Spinner secondaryWpnSpn;
     private ImageView secondaryWpnImg;
+    private Spinner armorPassiveSpn;
+    private ImageView armorPassiveImg;
+    private Spinner boosterSpn;
+    private ImageView boosterImg;
 
     @Nullable
     @Override
@@ -58,18 +63,28 @@ public class UploadFragment extends Fragment {
         iconos.recycle();
         nombresBase = Arrays.asList(nombres);
 
-        // Configura los spinners de estratagemas
+        // Configura los spinners e iconos de estratagemas
         configurarSpinnersEstratagemas();
 
-        // Configura los spinners de armas primarias
+        // Configura los spinners e iconos de armas primarias
         primaryWpnSpn = root.findViewById(R.id.primaryWpnSpn);
         primaryWpnImg = root.findViewById(R.id.primaryWpnImg);
         configurarSpinnersArmasPrimarias(root);
 
-        // Configura los spinners de armas secundarias
+        // Configura los spinners e iconos de armas secundarias
         secondaryWpnImg = root.findViewById(R.id.secondaryWpnImg);
         secondaryWpnSpn = root.findViewById(R.id.secondaryWpnSpn);
         configurarSpinnersArmasSecundarias(root);
+
+        // Configura los spinners de las pasivas de las armaduras;
+        armorPassiveImg = root.findViewById(R.id.armorPassiveImg);
+        armorPassiveSpn = root.findViewById(R.id.armorPassiveSpn);
+        configurarSpinnersPasivas(root);
+
+        // Configura los spinners e iconos de los potenciadores;
+        boosterSpn = root.findViewById(R.id.boosterSpn);
+        boosterImg = root.findViewById(R.id.boosterImg);
+        configurarSpinnersPotenciadores(root);
 
         return root;
     }
@@ -224,6 +239,86 @@ public class UploadFragment extends Fragment {
             }
             @Override public void onNothingSelected(AdapterView<?> parent) {
                 secondaryWpnImg.setImageDrawable(null);
+            }
+        });
+    }
+
+    private void configurarSpinnersPasivas(View root){
+
+        String[] pasivas = getResources().getStringArray(R.array.pasivas_armadura);
+        TypedArray typedArray = getResources().obtainTypedArray(R.array.pasivas_armadura_iconos);
+        int typedArrayLongitud = typedArray.length();
+        final int[] iconRes = new int[typedArrayLongitud];
+        for (int i = 0; i < typedArrayLongitud; i++) {
+            iconRes[i] = typedArray.getResourceId(i, 0);
+        }
+        typedArray.recycle();
+
+
+        List<String> lista = new ArrayList<>();
+        lista.add("-- Selecciona una pasiva --");
+        lista.addAll(Arrays.asList(pasivas));
+
+
+        ArrayAdapter<String> adapter = new ArrayAdapter<>(
+                requireContext(), android.R.layout.simple_spinner_item, lista);
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        armorPassiveSpn.setAdapter(adapter);
+        armorPassiveSpn.setSelection(0, false);
+
+
+        armorPassiveSpn.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                if (position == 0) {
+                    armorPassiveImg.setImageDrawable(null);
+                } else {
+                    // Como el placeholder ocupa índice 0, el drawable va en posición-1
+                    armorPassiveImg.setImageResource(iconRes[position - 1]);
+                }
+            }
+            @Override public void onNothingSelected(AdapterView<?> parent) {
+                armorPassiveImg.setImageDrawable(null);
+            }
+        });
+    }
+
+    private void configurarSpinnersPotenciadores(View root){
+
+        String[] potenciadores = getResources().getStringArray(R.array.potenciadores_nombres);
+        TypedArray typedArray = getResources().obtainTypedArray(R.array.potenciadores_iconos);
+        int typedArrayLongitud = typedArray.length();
+        final int[] iconRes = new int[typedArrayLongitud];
+        for (int i = 0; i < typedArrayLongitud; i++) {
+            iconRes[i] = typedArray.getResourceId(i, 0);
+        }
+        typedArray.recycle();
+
+
+        List<String> lista = new ArrayList<>();
+        lista.add("-- Selecciona un potenciador --");
+        lista.addAll(Arrays.asList(potenciadores));
+
+
+        ArrayAdapter<String> adapter = new ArrayAdapter<>(
+                requireContext(), android.R.layout.simple_spinner_item, lista);
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        boosterSpn.setAdapter(adapter);
+        boosterSpn.setSelection(0, false);
+
+
+        boosterSpn.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                if (position == 0) {
+                    boosterImg.setImageDrawable(null);
+                } else {
+                    // Como el placeholder ocupa índice 0, el drawable va en posición-1
+                    boosterImg.setImageResource(iconRes[position - 1]);
+                }
+            }
+            @Override public void onNothingSelected(AdapterView<?> parent) {
+                boosterImg.setImageDrawable(null);
             }
         });
     }

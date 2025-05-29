@@ -297,4 +297,80 @@
         <item>@drawable/veredicto</item>
 
     </string-array>
+
+
+    <!-- Arrays de Strings e Iconos para las pasivas -->
+    <string-array name="pasivas_armadura">
+
+        <item>Acolchada</item>
+        <item>Condicion Física Mejorada</item>
+        <item>Conductor Eléctrico</item>
+        <item>Explorador</item>
+        <item>Explosivos Integrados</item>
+        <item>Fortificado</item>
+        <item>Hombreras Reforzadas</item>
+        <item>Infiltración Avanzada</item>
+        <item>Inflamable</item>
+        <item>Inquebrantable</item>
+        <item>Kit de Ingeniería</item>
+        <item>Médico de Combate</item>
+        <item>Listo para el Asedio</item>
+        <item>Recarga Mejorada</item>
+        <item>Servoasistida</item>
+
+    </string-array>
+
+
+    <string-array name="pasivas_armadura_iconos">
+
+        <item>@drawable/acolchada</item>
+        <item>@drawable/condicionfisica</item>
+        <item>@drawable/conductorelectrico</item>
+        <item>@drawable/explorador</item>
+        <item>@drawable/explosivosintegrados</item>
+        <item>@drawable/fortificado</item>
+        <item>@drawable/hombrerasreforzadas</item>
+        <item>@drawable/infiltracionavanzada</item>
+        <item>@drawable/inflamable</item>
+        <item>@drawable/inquebrantable</item>
+        <item>@drawable/kitingenieria</item>
+        <item>@drawable/kitmedico</item>
+        <item>@drawable/listoasedio</item>
+        <item>@drawable/recarga</item>
+        <item>@drawable/servoasistida</item>
+
+    </string-array>
+
+
+    <string-array name="potenciadores_nombres">
+
+        <item>Aguante Mejorado</item>
+        <item>Cápsulas Hell Incendiarias</item>
+        <item>Confusión de Ubicación</item>
+        <item>Golpes Motivacionales</item>
+        <item>Infusión Experimental</item>
+        <item>Mejora Muscular</item>
+        <item>Mejora de Vitalidad</item>
+        <item>Optimización de Espacio</item>
+        <item>Experto en Extraciones</item>
+        <item>Radar Mejorado</item>
+        <item>Refuerzos Aumentados</item>
+
+    </string-array>
+
+    <string-array name="potenciadores_iconos">
+
+        <item>@drawable/aguantemejorado</item>
+        <item>@drawable/capsulasincendiarias</item>
+        <item>@drawable/confusionubicacion</item>
+        <item>@drawable/golpesmotivacionales</item>
+        <item>@drawable/infusionexperimental</item>
+        <item>@drawable/mejoramuscular</item>
+        <item>@drawable/mejoravitalidad</item>
+        <item>@drawable/optimizacionespacio</item>
+        <item>@drawable/pilotoexperto</item>
+        <item>@drawable/radarmejorado</item>
+        <item>@drawable/refuerzosaumentados</item>
+
+    </string-array>
 </resources>

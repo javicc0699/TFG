@@ -54,10 +54,12 @@ dependencies {
     androidTestImplementation(libs.espresso.core)
 
     // Esto es para Firebase
-    implementation("com.google.firebase:firebase-auth:22.1.1")
-    implementation("com.google.android.gms:play-services-auth:20.6.0")
+
+    implementation("com.google.firebase:firebase-auth:21.1.0")
+    implementation("com.google.android.gms:play-services-auth:20.5.0")
 
 
-    apply(plugin = "com.google.gms.google-services")
+
+
 
 }
