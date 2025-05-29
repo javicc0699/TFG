@@ -240,7 +240,6 @@
         <item>@drawable/incendiador</item>
         <item>@drawable/liberador</item>
         <item>@drawable/liberadorcarabina</item>
-        <item>@drawable/liberadorcarabina</item>
         <item>@drawable/liberadorcontusivo</item>
         <item>@drawable/liberadorpenetrador</item>
         <item>@drawable/ojodehalcon</item>
@@ -253,6 +252,49 @@
         <item>@drawable/rompedor</item>
         <item>@drawable/rompedorincendiario</item>
         <item>@drawable/smg</item>
+
+    </string-array>
+
+    <string-array name="armas_secundarias">
+
+        <item>Daga</item>
+        <item>Garra</item>
+        <item>Hacha de Combate</item>
+        <item>Incendiador Recortado</item>
+        <item>Lanza Aturdidora</item>
+        <item>Leal Plasma</item>
+        <item>Pacificadora</item>
+        <item>Pistola de Granadas</item>
+        <item>Pistola de Stims</item>
+        <item>Porra</item>
+        <item>Quemador</item>
+        <item>Redentora</item>
+        <item>Sable</item>
+        <item>Senadora</item>
+        <item>Ultimatum</item>
+        <item>Veredicto</item>
+
+    </string-array>
+
+
+    <string-array name="armas_secundarias_iconos">
+
+        <item>@drawable/daga</item>
+        <item>@drawable/garra</item>
+        <item>@drawable/hachadecombate</item>
+        <item>@drawable/incendiadorrecortado</item>
+        <item>@drawable/lanzaaturdidora</item>
+        <item>@drawable/lealsec</item>
+        <item>@drawable/pacificadora</item>
+        <item>@drawable/pistoladegranadas</item>
+        <item>@drawable/pistoladestim</item>
+        <item>@drawable/porra</item>
+        <item>@drawable/quemador</item>
+        <item>@drawable/redentora</item>
+        <item>@drawable/sable</item>
+        <item>@drawable/senadora</item>
+        <item>@drawable/ultimatum</item>
+        <item>@drawable/veredicto</item>
 
     </string-array>
 </resources>
