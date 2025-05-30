@@ -64,7 +64,6 @@
                 android:id="@+id/fourthStratSpn"
                 android:layout_width="0dp"
                 android:layout_height="40dp"
-                android:layout_marginStart="8dp"
                 android:layout_weight="1"
                 android:background="@drawable/spinner_fondo"
                 android:padding="4dp"
@@ -212,7 +211,7 @@
                 android:layout_width="70dp"
                 android:layout_height="70dp"
                 android:adjustViewBounds="true"
-                android:src="@drawable/democraciaprotege" />
+                android:src="@drawable/recuadroarm" />
         </LinearLayout>
 
         <!-- Potenciadores -->
