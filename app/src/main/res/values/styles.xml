@@ -1,0 +1,8 @@
+<!-- app/src/main/res/values/styles.xml -->
+<resources>
+    <style name="Theme.Helldivers.Dialog" parent="ThemeOverlay.MaterialComponents.MaterialAlertDialog">
+        <item name="android:background">@color/spinner_bg</item>
+        <item name="android:textColorPrimary">@color/spinner_text</item>
+        <item name="colorPrimary">@color/helldivers_yellow</item>
+    </style>
+</resources>

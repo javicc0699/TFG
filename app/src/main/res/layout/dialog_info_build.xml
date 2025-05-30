@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:background="@color/spinner_bg"
+    android:padding="24dp">
+
+    <EditText
+        android:id="@+id/buildNameEt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/spinner_fondo"
+        android:hint="Nombre de la build"
+        android:textColorHint="@color/spinner_border"
+        android:padding="8dp"
+        android:textColor="@color/spinner_text"
+        android:inputType="textCapWords"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Facción"
+        android:textStyle="bold"
+        android:textColor="@color/spinner_text"/>
+
+    <HorizontalScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fillViewport="true"
+        android:layout_marginTop="8dp"
+        android:scrollbars="none">
+
+        <RadioGroup
+            android:id="@+id/factionRg"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/rbTerminidos"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Termíndos"
+                android:textColor="@color/spinner_text"/>
+
+            <RadioButton
+                android:id="@+id/rbIluminados"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Iluminados"
+                android:layout_marginStart="16dp"
+                android:textColor="@color/spinner_text"/>
+
+            <RadioButton
+                android:id="@+id/rbBots"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Bots"
+                android:layout_marginStart="16dp"
+                android:textColor="@color/spinner_text"/>
+        </RadioGroup>
+    </HorizontalScrollView>
+</LinearLayout>

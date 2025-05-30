@@ -13,4 +13,8 @@
     <string name="primariaTxt">Arma Primaria</string>
     <string name="subirTxt">Subir</string>
     <string name="default_web_client_id">181421282560-eabinikk13cq97caf9ekmss62ogehm9n.apps.googleusercontent.com</string>
+    <string name="estadotxt">Estado</string>
+    <string name="buildstxtbtn">Builds</string>
+    <string name="subirtxt">Subir</string>
+    <string name="ordenestxtbtn">Órdenes</string>
 </resources>

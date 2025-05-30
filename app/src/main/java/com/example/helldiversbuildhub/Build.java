@@ -3,28 +3,49 @@ package com.example.helldiversbuildhub;
 import java.util.List;
 
 public class Build {
+    public String id;
+    public String userId;
+    public String username;
+    public String buildName;
+    public String primaryWeapon;
+    public String secondaryWeapon;
+    public String armorPassive;
+    public String booster;
+    public String faction;
+    public List<String> stratagems;
+    public int likes;
+    public int dislikes;
+    public String date;
 
-    private String id;
-    private String userId;
-    private String primaryWeapon;
-    private String secondaryWeapon;
-    private String armorPassive;
-    private List<String> stratagems;
-    private int likes;
-    private int dislikes;
-    private String date;
+    public Build() {
+    }
 
-    public Build(){}
-
-    public Build(String userId, String id, String primaryWeapon, String secondaryWeapon, String armorPassive, List<String> stratagems, int likes, int dislikes, String date) {
-        this.userId = userId;
+    // Constructor
+    public Build(String id,
+                 String userId,
+                 String username,
+                 String buildName,
+                 String primaryWeapon,
+                 String secondaryWeapon,
+                 String armorPassive,
+                 String booster,
+                 String faction,
+                 List<String> stratagems,
+                 int likes,
+                 int dislikes,
+                 String date) {
         this.id = id;
+        this.userId = userId;
+        this.username = username;
+        this.buildName = buildName;
         this.primaryWeapon = primaryWeapon;
         this.secondaryWeapon = secondaryWeapon;
         this.armorPassive = armorPassive;
+        this.booster = booster;
+        this.faction = faction;
         this.stratagems = stratagems;
-        this.likes = 0;
-        this.dislikes = 0;
+        this.likes = likes;
+        this.dislikes = dislikes;
         this.date = date;
     }
 
@@ -36,67 +57,6 @@ public class Build {
         this.id = id;
     }
 
-    public String getUserId() {
-        return userId;
-    }
-
-    public void setUserId(String userId) {
-        this.userId = userId;
-    }
-
-    public String getPrimaryWeapon() {
-        return primaryWeapon;
-    }
-
-    public void setPrimaryWeapon(String primaryWeapon) {
-        this.primaryWeapon = primaryWeapon;
-    }
-
-    public String getSecondaryWeapon() {
-        return secondaryWeapon;
-    }
-
-    public void setSecondaryWeapon(String secondaryWeapon) {
-        this.secondaryWeapon = secondaryWeapon;
-    }
-
-    public String getArmorPassive() {
-        return armorPassive;
-    }
-
-    public void setArmorPassive(String armorPassive) {
-        this.armorPassive = armorPassive;
-    }
-
-    public int getLikes() {
-        return likes;
-    }
-
-    public void setLikes(int likes) {
-        this.likes = likes;
-    }
-
-    public int getDislikes() {
-        return dislikes;
-    }
-
-    public void setDislikes(int dislikes) {
-        this.dislikes = dislikes;
-    }
-
-    public String getDate() {
-        return date;
-    }
-
-    public void setDate(String date) {
-        this.date = date;
-    }
-
-    public List<String> getStratagems() {
-        return stratagems;
-    }
-
-    public void setStratagems(List<String> stratagems) {
-        this.stratagems = stratagems;
-    }
 }
+
+

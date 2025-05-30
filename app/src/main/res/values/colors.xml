@@ -25,4 +25,19 @@
     <color name="default_fondo">#FFFFFF</color>
     <color name="default_borde">#CCCCCC</color>
 
+
+
+    <!-- Amarillo Helldivers 2 -->
+    <color name="helldivers_yellow">#FFEA00</color>
+    <!-- Fondo para los spinners -->
+    <color name="spinner_bg">#282828</color>
+    <!-- Borde amarillo -->
+    <color name="spinner_border">@color/helldivers_yellow</color>
+    <!-- Fondo de la lista del spinner y para el dialogo -->
+    <color name="spinner_popup_bg">#202020</color>
+    <!-- Texto del spinner -->
+    <color name="spinner_text">#FFFFFF</color>
+
+
+
 </resources>

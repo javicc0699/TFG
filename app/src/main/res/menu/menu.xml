@@ -4,17 +4,17 @@
     <item
         android:id="@+id/frag1"
         android:icon="@drawable/baseline_home_24"
-        android:title="Estado" />
+        android:title="@string/estadotxt" />
     <item
         android:id="@+id/frag2"
         android:icon="@drawable/baseline_gamepad_24"
-        android:title="Builds" />
+        android:title="@string/buildstxtbtn" />
     <item
         android:id="@+id/frag3"
         android:icon="@drawable/baseline_share_24"
-        android:title="Subir" />
+        android:title="@string/subirtxt" />
     <item
         android:id="@+id/frag4"
         android:icon="@drawable/baseline_info_24"
-        android:title="Órdenes" />
+        android:title="@string/ordenestxtbtn" />
 </menu>

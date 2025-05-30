@@ -1,23 +1,36 @@
 package com.example.helldiversbuildhub;
 
+import android.app.AlertDialog;
 import android.content.res.TypedArray;
 import android.media.Image;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.RadioGroup;
 import android.widget.Spinner;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.firestore.FirebaseFirestore;
+
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Date;
 import java.util.List;
+import java.util.Locale;
 
 public class UploadFragment extends Fragment {
 
@@ -34,6 +47,7 @@ public class UploadFragment extends Fragment {
     private ImageView armorPassiveImg;
     private Spinner boosterSpn;
     private ImageView boosterImg;
+    private Button uploadBtn;
 
     @Nullable
     @Override
@@ -86,7 +100,122 @@ public class UploadFragment extends Fragment {
         boosterImg = root.findViewById(R.id.boosterImg);
         configurarSpinnersPotenciadores(root);
 
+        uploadBtn = root.findViewById(R.id.uploadBtn);
+
+        FirebaseFirestore db = FirebaseFirestore.getInstance();
+        FirebaseAuth auth = FirebaseAuth.getInstance();
+
+        uploadBtn.setOnClickListener(v -> {
+            View dialogView = getLayoutInflater().inflate(R.layout.dialog_info_build, null);
+            EditText buildNameEt = dialogView.findViewById(R.id.buildNameEt);
+            RadioGroup factionRg = dialogView.findViewById(R.id.factionRg);
+
+            new AlertDialog.Builder(requireContext(), R.style.Theme_Helldivers_Dialog)
+                    .setTitle("Detalles adicionales de la build")
+                    .setView(dialogView)
+                    .setPositiveButton("Subir Build", (dialog, which) -> {
+                        String buildName = buildNameEt.getText().toString().trim();
+                        int checkedId = factionRg.getCheckedRadioButtonId();
+                        if (buildName.isEmpty() || checkedId == -1) {
+                            Toast.makeText(requireContext(),
+                                    "Debes ponerle un nombre a tu build y seleccionar facción",
+                                    Toast.LENGTH_SHORT).show();
+
+
+                            return;
+                        }
+
+                        String faction;
+                        if (checkedId == R.id.rbTerminidos) faction = "Terminids";
+                        else if (checkedId == R.id.rbIluminados) faction = "Illuminate";
+                        else faction = "Automatons";
+
+
+                        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+                        if (user == null) {
+                            Toast.makeText(requireContext(),
+                                    "Debes iniciar sesión primero",
+                                    Toast.LENGTH_SHORT).show();
+                            return;
+                        }
+                        // Se obtienen los datos del usuario
+                        String userId = user.getUid();
+                        String email = user.getEmail() != null ? user.getEmail() : "";
+                        String username;
+                        if (user.getDisplayName() != null && !user.getDisplayName().isEmpty()) {
+                            username = user.getDisplayName();
+                        } else if (!email.isEmpty()) {
+                            int at = email.indexOf('@');
+                            username = at > 0 ? email.substring(0, at) : email;
+                        } else {
+                            username = "Anónimo";
+                        }
+
+                        // Se recogen los datos
+                        String primaryWpn = (String) primaryWpnSpn.getSelectedItem();
+                        String secondaryWpn = (String) secondaryWpnSpn.getSelectedItem();
+                        String armorPassive = (String) armorPassiveSpn.getSelectedItem();
+                        String booster = (String) boosterSpn.getSelectedItem();
+                        List<String> strats = new ArrayList<>();
+                        for (Spinner s : spinnersStrats) {
+                            String sel = (String) s.getSelectedItem();
+                            if (!"-- Selecciona --".equals(sel)) strats.add(sel);
+                        }
+                        if (primaryWpn.startsWith("--") || secondaryWpn.startsWith("--") ||
+                                armorPassive.startsWith("--") || booster.startsWith("--") ||
+                                strats.size() < 4) {
+                            Toast.makeText(getContext(),
+                                    "Completa todos los campos antes de continuar",
+                                    Toast.LENGTH_SHORT).show();
+                            return;
+                        }
+
+                        // Se genera un id para la build y la fecha la coge del sistema
+                        String buildId = db.collection("builds").document().getId();
+                        String date = new SimpleDateFormat("yyyy-MM-dd", Locale.getDefault())
+                                .format(new Date());
+
+                        // Se crea un objeto build.
+                        Build build = new Build(
+                                buildId,
+                                userId,
+                                username,
+                                buildName,
+                                primaryWpn,
+                                secondaryWpn,
+                                armorPassive,
+                                booster,
+                                faction,
+                                strats,
+                                0,
+                                0,
+                                date
+                        );
+
+                        // Se suben los datos a Firebase
+                        db.collection("builds")
+                                .document(buildId)
+                                .set(build)
+                                .addOnSuccessListener(aVoid -> {
+                                    Toast.makeText(getContext(),
+                                            "Build subida con éxito!", Toast.LENGTH_SHORT).show();
+                                    dialog.dismiss();
+                                    // resetBtn.performClick(); a esto le falta que le haga el listener
+                                })
+                                .addOnFailureListener(e -> {
+                                    Log.e("UploadFragment", "Error al subir build", e);
+                                    Toast.makeText(getContext(),
+                                            "Error al subir build", Toast.LENGTH_SHORT).show();
+                                });
+                    })
+                    .setNegativeButton("Cancelar", (d, which) -> d.dismiss())
+                    .show();
+        });
+
+
         return root;
+
+
     }
 
     // Este metodo inicializa los spinners de estratagemas y sus iconos
@@ -120,7 +249,10 @@ public class UploadFragment extends Fragment {
                     }
                     actualizarAdaptadores();
                 }
-                @Override public void onNothingSelected(AdapterView<?> parent) { }
+
+                @Override
+                public void onNothingSelected(AdapterView<?> parent) {
+                }
             });
         }
     }
@@ -197,7 +329,9 @@ public class UploadFragment extends Fragment {
                     primaryWpnImg.setImageResource(iconRes[position - 1]);
                 }
             }
-            @Override public void onNothingSelected(AdapterView<?> parent) {
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
                 primaryWpnImg.setImageDrawable(null);
             }
         });
@@ -237,13 +371,15 @@ public class UploadFragment extends Fragment {
                     secondaryWpnImg.setImageResource(iconRes[position - 1]);
                 }
             }
-            @Override public void onNothingSelected(AdapterView<?> parent) {
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
                 secondaryWpnImg.setImageDrawable(null);
             }
         });
     }
 
-    private void configurarSpinnersPasivas(View root){
+    private void configurarSpinnersPasivas(View root) {
 
         String[] pasivas = getResources().getStringArray(R.array.pasivas_armadura);
         TypedArray typedArray = getResources().obtainTypedArray(R.array.pasivas_armadura_iconos);
@@ -277,13 +413,15 @@ public class UploadFragment extends Fragment {
                     armorPassiveImg.setImageResource(iconRes[position - 1]);
                 }
             }
-            @Override public void onNothingSelected(AdapterView<?> parent) {
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
                 armorPassiveImg.setImageDrawable(null);
             }
         });
     }
 
-    private void configurarSpinnersPotenciadores(View root){
+    private void configurarSpinnersPotenciadores(View root) {
 
         String[] potenciadores = getResources().getStringArray(R.array.potenciadores_nombres);
         TypedArray typedArray = getResources().obtainTypedArray(R.array.potenciadores_iconos);
@@ -317,7 +455,9 @@ public class UploadFragment extends Fragment {
                     boosterImg.setImageResource(iconRes[position - 1]);
                 }
             }
-            @Override public void onNothingSelected(AdapterView<?> parent) {
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
                 boosterImg.setImageDrawable(null);
             }
         });
