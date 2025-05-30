@@ -50,8 +50,11 @@ dependencies {
     implementation(libs.glide)
     implementation(libs.firebase.firestore)
     testImplementation(libs.junit)
+    implementation("androidx.core:core:1.9.0")
+    implementation("com.google.android.material:material:1.10.0")
     androidTestImplementation(libs.ext.junit)
     androidTestImplementation(libs.espresso.core)
+
 
     // Esto es para Firebase
 

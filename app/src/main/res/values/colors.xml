@@ -38,6 +38,8 @@
     <!-- Texto del spinner -->
     <color name="spinner_text">#FFFFFF</color>
 
-
+    <color name="helldivers_yellow_otro">#FFC107</color>
+    <color name="helldivers_purple">#A972FF</color>
+    <color name="helldivers_dark">#2E2E2E</color>
 
 </resources>

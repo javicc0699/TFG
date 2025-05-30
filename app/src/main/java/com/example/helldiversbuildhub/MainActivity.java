@@ -85,7 +85,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onStart() {
         super.onStart();
-        // Comprueba sesión si no hay usuario vuelve al login
+        // Comprueba sesión si no hay usuario, vuelve al login
         FirebaseUser currentUser = mAuth.getCurrentUser();
         if (currentUser == null) {
             Log.d("MainActivity", "No user logged in, redirecting to LoginActivity");

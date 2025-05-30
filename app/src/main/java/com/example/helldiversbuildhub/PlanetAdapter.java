@@ -4,14 +4,19 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.ProgressBar;
 import android.widget.TextView;
-
+import android.content.res.ColorStateList;
+import android.graphics.PorterDuff;
+import android.os.Build;
+import androidx.core.content.ContextCompat;
 import androidx.core.content.ContextCompat;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.android.material.card.MaterialCardView;
 
 import java.util.List;
+import java.util.Locale;
 
 public class PlanetAdapter extends RecyclerView.Adapter<PlanetAdapter.PlanetViewHolder> {
     private final List<Planet> planetList;
@@ -29,11 +34,19 @@ public class PlanetAdapter extends RecyclerView.Adapter<PlanetAdapter.PlanetView
     @Override
     public void onBindViewHolder(PlanetViewHolder holder, int position) {
         Planet planet = planetList.get(position);
+        double libRate = planet.getPercentage();
+        double porcentaje = libRate;
+
+        String formateado = String.format(Locale.getDefault(), "%.3f%%", porcentaje);
 
         // Se asignan los datos de cada planeta.
         holder.planetNameTv.setText(planet.getName());
         holder.playersTv.setText(String.valueOf(planet.getPlayers()));
-        holder.libRate.setText(planet.getPercentage() + "%");
+        holder.libRate.setText(formateado);
+
+        int progreso = (int) Math.round(porcentaje);
+        holder.progressBar.setMax(100);
+        holder.progressBar.setProgress(progreso);
 
         // Aqui se ponen los colores acorde con el tipo de entrada (facción).
         int bgColor, borderColor, iconRes;
@@ -42,6 +55,7 @@ public class PlanetAdapter extends RecyclerView.Adapter<PlanetAdapter.PlanetView
                 bgColor = ContextCompat.getColor(holder.itemView.getContext(), R.color.terminidos_color_fondo);
                 borderColor = ContextCompat.getColor(holder.itemView.getContext(), R.color.terminidos_color_borde);
                 iconRes = R.drawable.terminid_icon;
+
                 break;
 
             case "Super Earth":
@@ -68,6 +82,15 @@ public class PlanetAdapter extends RecyclerView.Adapter<PlanetAdapter.PlanetView
         holder.card.setStrokeColor(borderColor);
         holder.card.setStrokeWidth(holder.itemView.getResources().getDimensionPixelSize(R.dimen.card_stroke_width));
         holder.factionIcon.setImageResource(iconRes);
+
+
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            holder.progressBar.setProgressTintList(ColorStateList.valueOf(borderColor));
+            holder.progressBar.setProgressBackgroundTintList(ColorStateList.valueOf(bgColor));
+        } else {
+            holder.progressBar.getProgressDrawable()
+                    .setColorFilter(borderColor, PorterDuff.Mode.SRC_IN);
+        }
     }
 
     @Override
@@ -79,6 +102,7 @@ public class PlanetAdapter extends RecyclerView.Adapter<PlanetAdapter.PlanetView
         MaterialCardView card;
         ImageView helmetIcon, factionIcon, biomeImg;
         TextView planetNameTv, playersTv, percentageTv, libRate;
+        ProgressBar progressBar;
 
         public PlanetViewHolder(View itemView) {
             super(itemView);
@@ -86,7 +110,7 @@ public class PlanetAdapter extends RecyclerView.Adapter<PlanetAdapter.PlanetView
             helmetIcon = itemView.findViewById(R.id.helmetIcon);
             factionIcon = itemView.findViewById(R.id.factionIcon);
             biomeImg = itemView.findViewById(R.id.biomeImg);
-
+            progressBar = itemView.findViewById(R.id.progressBar);
             planetNameTv = itemView.findViewById(R.id.planetNameTv);
             playersTv = itemView.findViewById(R.id.playersTv);
             percentageTv = itemView.findViewById(R.id.percentageTv);

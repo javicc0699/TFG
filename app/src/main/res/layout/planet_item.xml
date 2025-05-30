@@ -75,7 +75,11 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
                 android:layout_marginEnd="8dp"
-                android:layout_weight="1" />
+                android:layout_weight="1"
+                android:max="100"
+                android:progressTint="@color/helldivers_yellow_otro"
+                android:secondaryProgressTint="@color/helldivers_purple"
+                android:progressBackgroundTint="@color/helldivers_dark"/>
 
             <TextView
                 android:id="@+id/libRate"

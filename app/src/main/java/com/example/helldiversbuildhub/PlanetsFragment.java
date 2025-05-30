@@ -8,6 +8,8 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.os.Handler;
+import android.os.Looper;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -27,12 +29,24 @@ public class PlanetsFragment extends Fragment {
     private RecyclerView recyclerView;
     private PlanetAdapter adapter;
 
+    // Esto de aqui hace que se refresque cada 10 segundos la entrada de info de los planetas.
+    private final int TEMPORIZADOR = 10_000; // 10 segs
+    private final Handler handler = new Handler(Looper.getMainLooper());
+    private Runnable actualizador = new Runnable() {
+        @Override
+        public void run() {
+            loadPlanets();
+            handler.postDelayed(this, TEMPORIZADOR);
+        }
+    };
+
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_planets, container, false);
         recyclerView = view.findViewById(R.id.planetsRV);
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
         loadPlanets();
+        handler.postDelayed(actualizador, TEMPORIZADOR);
         return view;
 
     }
@@ -57,5 +71,11 @@ public class PlanetsFragment extends Fragment {
                 Log.e("PlanetsFragment", "Fallo: " + t.getMessage());
             }
         });
+    }
+
+    @Override
+    public void onDestroyView() {
+        super.onDestroyView();
+        handler.removeCallbacks(actualizador);
     }
 }
