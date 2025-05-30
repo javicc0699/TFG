@@ -1,64 +1,105 @@
 package com.example.helldiversbuildhub;
 
 import android.os.Bundle;
-
-import androidx.fragment.app.Fragment;
-
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ProgressBar;
+import android.widget.TextView;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link BuildsFragment#newInstance} factory method to
- * create an instance of this fragment.
- */
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
+
+import com.google.firebase.firestore.DocumentSnapshot;
+import com.google.firebase.firestore.EventListener;
+import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.FirebaseFirestoreException;
+import com.google.firebase.firestore.QuerySnapshot;
+
+import java.util.ArrayList;
+import java.util.List;
+
 public class BuildsFragment extends Fragment {
 
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
+    private RecyclerView buildsRv;
+    private TextView buildsVaciasTxt;
+    private ProgressBar progresodeCarga;
+    private List<Build> buildsList = new ArrayList<>();
+    private BuildsAdapter adapter;
+    private FirebaseFirestore db = FirebaseFirestore.getInstance();
+    private SwipeRefreshLayout swipe;
 
-    // TODO: Rename and change types of parameters
-    private String mParam1;
-    private String mParam2;
-
-    public BuildsFragment() {
-        // Required empty public constructor
-    }
-
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment BuildsFragment.
-     */
-    // TODO: Rename and change types and number of parameters
-    public static BuildsFragment newInstance(String param1, String param2) {
-        BuildsFragment fragment = new BuildsFragment();
-        Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
-        fragment.setArguments(args);
-        return fragment;
-    }
-
+    @Nullable
     @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
-        }
+    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+
+        View view = inflater.inflate(R.layout.fragment_builds, container, false);
+
+        buildsRv = view.findViewById(R.id.buildsRv);
+        buildsVaciasTxt = view.findViewById(R.id.buildsVaciasTxt);
+        progresodeCarga = view.findViewById(R.id.progresodeCarga);
+        swipe = view.findViewById(R.id.swipe);
+
+        adapter = new BuildsAdapter(requireContext(), buildsList);
+        buildsRv.setLayoutManager(new LinearLayoutManager(requireContext()));
+        buildsRv.setAdapter(adapter);
+        swipe.setOnRefreshListener(() -> {
+            cargarBuilds();
+        });
+
+        cargarBuilds();
+
+        return view;
     }
 
-    @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_builds, container, false);
+    // Este metodo carga las builds desde Firebase para mostrarlas en el RecyclerView.
+
+    private void cargarBuilds() {
+
+        swipe.setRefreshing(true);
+        progresodeCarga.setVisibility(View.VISIBLE);
+        buildsVaciasTxt.setVisibility(View.GONE);
+        buildsRv.setVisibility(View.GONE);
+
+        db.collection("builds")
+                .orderBy("date")  // Ordenar por fecha, luego lo puedo cambiar por mayor nº de likes cuando funcione.
+                .addSnapshotListener((snapshots, error) -> {
+                    swipe.setRefreshing(false);
+                    progresodeCarga.setVisibility(View.GONE);
+
+                    if (error != null) {
+                        buildsVaciasTxt.setText("Error al cargar las builds");
+                        buildsVaciasTxt.setVisibility(View.VISIBLE);
+                        return;
+                    }
+                    if (snapshots == null || snapshots.isEmpty()) {
+                        // Sin builds
+                        buildsList.clear();
+                        adapter.notifyDataSetChanged();
+                        buildsVaciasTxt.setText("No hay builds todavía");
+                        buildsVaciasTxt.setVisibility(View.VISIBLE);
+                        return;
+                    }
+
+                    // Hay datos: vacía y rellena la lista
+                    buildsList.clear();
+                    for (DocumentSnapshot doc : snapshots.getDocuments()) {
+                        Build b = doc.toObject(Build.class);
+                        if (b != null) buildsList.add(b);
+                    }
+                    adapter.notifyDataSetChanged();
+
+                    // Mostrar lista o el mensaje
+                    if (buildsList.isEmpty()) {
+                        buildsVaciasTxt.setText("No hay builds todavía");
+                        buildsVaciasTxt.setVisibility(View.VISIBLE);
+                    } else {
+                        buildsRv.setVisibility(View.VISIBLE);
+                    }
+                });
     }
 }

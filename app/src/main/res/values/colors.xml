@@ -10,15 +10,15 @@
     <color name="default_background">#3d3d3d</color>
 
     <!-- Colores para la invasion de terminidos !-->
-    <color name="terminidos_color_fondo">#fff0a1</color>
+    <color name="terminidos_color_fondo">#000000</color>
     <color name="terminidos_color_borde">#ffb500</color>
 
     <!-- Colores para la invasion de los iluminados !-->
-    <color name="iluminados_color_fondo">#a972ff</color>
+    <color name="iluminados_color_fondo">#000000</color>
     <color name="iluminados_color_borde">#7400cf</color>
 
     <!-- Colores para la invasion de bots !-->
-    <color name="bots_color_fondo">#ff6d6d</color>
+    <color name="bots_color_fondo">#000000</color>
     <color name="bots_color_borde">#c40000</color>
 
     <!-- Colores por defecto !-->

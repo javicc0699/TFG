@@ -17,4 +17,5 @@
     <string name="buildstxtbtn">Builds</string>
     <string name="subirtxt">Subir</string>
     <string name="ordenestxtbtn">Órdenes</string>
+    <string name="faccionTxt">Facción (Desliza para ver más)</string>
 </resources>

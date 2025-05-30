@@ -270,8 +270,9 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
                 android:layout_weight="1"
-                android:backgroundTint="#FFEB3B"
+                android:backgroundTint="@color/helldivers_yellow"
                 android:text="@string/subirTxt"
+                android:textColor="#000000"
                 app:cornerRadius="5dp" />
         </LinearLayout>
 

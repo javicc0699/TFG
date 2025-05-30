@@ -126,9 +126,9 @@ public class UploadFragment extends Fragment {
                         }
 
                         String faction;
-                        if (checkedId == R.id.rbTerminidos) faction = "Terminids";
-                        else if (checkedId == R.id.rbIluminados) faction = "Illuminate";
-                        else faction = "Automatons";
+                        if (checkedId == R.id.rbTerminidos) faction = "Termínidos";
+                        else if (checkedId == R.id.rbIluminados) faction = "Iluminados";
+                        else faction = "Bots";
 
 
                         FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();

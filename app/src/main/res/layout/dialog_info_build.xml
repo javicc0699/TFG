@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+
     android:orientation="vertical"
     android:background="@color/spinner_bg"
     android:padding="24dp">
@@ -22,9 +23,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:text="Facción"
-        android:textStyle="bold"
-        android:textColor="@color/spinner_text"/>
+        android:text="@string/faccionTxt"
+        android:textColor="@color/spinner_text"
+        android:textStyle="bold" />
 
     <HorizontalScrollView
         android:layout_width="match_parent"
@@ -44,23 +45,30 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Termíndos"
-                android:textColor="@color/spinner_text"/>
+                android:textColor="@color/radiobutton_text_color"
+                app:buttonTint="@color/radio_button_tint"
+                app:buttonTintMode="src_in"/>
 
             <RadioButton
                 android:id="@+id/rbIluminados"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Iluminados"
                 android:layout_marginStart="16dp"
-                android:textColor="@color/spinner_text"/>
+                android:text="Iluminados"
+                android:textColor="@color/radiobutton_text_color"
+                app:buttonTint="@color/radio_button_tint"
+                app:buttonTintMode="src_in"/>
 
             <RadioButton
                 android:id="@+id/rbBots"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Bots"
                 android:layout_marginStart="16dp"
-                android:textColor="@color/spinner_text"/>
+                android:text="Bots"
+                android:textColor="@color/radiobutton_text_color"
+                app:buttonTint="@color/radio_button_tint"
+                app:buttonTintMode="src_in"/>
+
         </RadioGroup>
     </HorizontalScrollView>
 </LinearLayout>

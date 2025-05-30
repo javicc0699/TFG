@@ -21,19 +21,7 @@ public class Build {
     }
 
     // Constructor
-    public Build(String id,
-                 String userId,
-                 String username,
-                 String buildName,
-                 String primaryWeapon,
-                 String secondaryWeapon,
-                 String armorPassive,
-                 String booster,
-                 String faction,
-                 List<String> stratagems,
-                 int likes,
-                 int dislikes,
-                 String date) {
+    public Build(String id, String userId, String username, String buildName, String primaryWeapon, String secondaryWeapon, String armorPassive, String booster, String faction, List<String> stratagems, int likes, int dislikes, String date) {
         this.id = id;
         this.userId = userId;
         this.username = username;

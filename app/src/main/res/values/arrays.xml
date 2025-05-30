@@ -373,4 +373,19 @@
         <item>@drawable/refuerzosaumentados</item>
 
     </string-array>
+
+
+    <!-- Facciones !-->
+
+    <string-array name="facciones_nombres">
+        <item>Termínidos</item>
+        <item>Iluminados</item>
+        <item>Bots</item>
+    </string-array>
+
+    <string-array name="facciones_iconos">
+        <item>@drawable/terminid_icon</item>
+        <item>@drawable/illuminate_logo</item>
+        <item>@drawable/bots_logo</item>
+    </string-array>
 </resources>
