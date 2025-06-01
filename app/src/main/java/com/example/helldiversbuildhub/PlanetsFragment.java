@@ -78,4 +78,18 @@ public class PlanetsFragment extends Fragment {
         super.onDestroyView();
         handler.removeCallbacks(actualizador);
     }
+
+    // Reanuda la actualizacion de datos cuando se resuma el fragment.
+    @Override
+    public void onResume() {
+        super.onResume();
+        handler.post(actualizador);
+    }
+
+    // Parar de actualizar cuando se pause la actividad para no saturar la api.
+    @Override
+    public void onPause() {
+        super.onPause();
+        handler.removeCallbacks(actualizador);
+    }
 }

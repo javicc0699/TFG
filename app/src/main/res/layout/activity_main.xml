@@ -22,5 +22,10 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
+        android:background="#000000"
+        app:itemIconSize="36dp"
+        android:fontFamily="@font/orbitron_regular"
+        app:itemIconTint="@color/bottom_nav_icon_color"
+        app:itemTextColor="@color/bottom_nav_icon_color"
         app:menu="@menu/menu" />
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -64,6 +64,7 @@
                 android:id="@+id/fourthStratSpn"
                 android:layout_width="0dp"
                 android:layout_height="40dp"
+                android:layout_marginStart="8dp"
                 android:layout_weight="1"
                 android:background="@drawable/spinner_fondo"
                 android:padding="4dp"
@@ -121,6 +122,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
+            android:fontFamily="@font/orbitron_bold"
             android:text="@string/primariaTxt"
             android:textStyle="bold" />
 
@@ -133,6 +135,7 @@
                 android:id="@+id/primaryWpnSpn"
                 android:layout_width="0dp"
                 android:layout_height="40dp"
+                android:layout_marginTop="16dp"
                 android:layout_marginEnd="8dp"
                 android:layout_weight="1"
                 android:background="@drawable/spinner_fondo"
@@ -154,6 +157,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
+            android:fontFamily="@font/orbitron_bold"
             android:text="@string/secundariaTxt"
             android:textStyle="bold" />
 
@@ -166,6 +170,7 @@
                 android:id="@+id/secondaryWpnSpn"
                 android:layout_width="0dp"
                 android:layout_height="40dp"
+                android:layout_marginTop="16dp"
                 android:layout_marginEnd="8dp"
                 android:layout_weight="1"
                 android:background="@drawable/spinner_fondo"
@@ -187,6 +192,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
+            android:fontFamily="@font/orbitron_bold"
             android:text="@string/pasivaTxt"
             android:textStyle="bold" />
 
@@ -199,6 +205,7 @@
                 android:id="@+id/armorPassiveSpn"
                 android:layout_width="0dp"
                 android:layout_height="40dp"
+                android:layout_marginTop="16dp"
                 android:layout_marginEnd="8dp"
                 android:layout_weight="1"
                 android:background="@drawable/spinner_fondo"
@@ -220,6 +227,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
+            android:fontFamily="@font/orbitron_bold"
             android:text="@string/potenciadorEsp"
             android:textStyle="bold" />
 
@@ -233,6 +241,7 @@
                 android:id="@+id/boosterSpn"
                 android:layout_width="0dp"
                 android:layout_height="40dp"
+                android:layout_marginTop="16dp"
                 android:layout_marginEnd="8dp"
                 android:layout_weight="1"
                 android:background="@drawable/spinner_fondo"
@@ -260,8 +269,10 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:backgroundTint="#FF0000"
+                android:backgroundTint="@color/reset_btn"
+                android:fontFamily="@font/orbitron_black"
                 android:text="Reset"
+                android:textColor="@color/black"
                 app:cornerRadius="5dp" />
 
             <Button
@@ -271,6 +282,7 @@
                 android:layout_marginStart="8dp"
                 android:layout_weight="1"
                 android:backgroundTint="@color/helldivers_yellow"
+                android:fontFamily="@font/orbitron_black"
                 android:text="@string/subirTxt"
                 android:textColor="#000000"
                 app:cornerRadius="5dp" />

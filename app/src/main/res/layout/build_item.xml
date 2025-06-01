@@ -27,6 +27,7 @@
             <TextView
                 android:id="@+id/usernameTv"
                 android:layout_width="0dp"
+                android:fontFamily="@font/orbitron_bold"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:textStyle="bold"
@@ -35,6 +36,7 @@
 
             <TextView
                 android:id="@+id/dateTv"
+                android:fontFamily="@font/orbitron_bold"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textColor="@color/spinner_text"
@@ -133,6 +135,7 @@
             <TextView
                 android:id="@+id/likeCountTv"
                 android:layout_width="wrap_content"
+                android:fontFamily="@font/orbitron_regular"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="4dp"
                 android:textColor="@color/spinner_text"
@@ -150,6 +153,7 @@
             <TextView
                 android:id="@+id/dislikeCountTv"
                 android:layout_width="wrap_content"
+                android:fontFamily="@font/orbitron_regular"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="4dp"
                 android:textColor="@color/spinner_text"

@@ -3,18 +3,23 @@
 
     <item
         android:id="@+id/frag1"
-        android:icon="@drawable/baseline_home_24"
+        android:icon="@drawable/planet_deseleccionado"
+        android:fontFamily="@font/orbitron_regular"
         android:title="@string/estadotxt" />
     <item
         android:id="@+id/frag2"
-        android:icon="@drawable/baseline_gamepad_24"
+        android:icon="@drawable/casco_deselect"
+        android:fontFamily="@font/orbitron_regular"
         android:title="@string/buildstxtbtn" />
     <item
         android:id="@+id/frag3"
-        android:icon="@drawable/baseline_share_24"
+        android:icon="@drawable/share_unselected_helldivers"
+        android:fontFamily="@font/orbitron_regular"
         android:title="@string/subirtxt" />
+
     <item
         android:id="@+id/frag4"
-        android:icon="@drawable/baseline_info_24"
+        android:icon="@drawable/major_orders_unselected"
+        android:fontFamily="@font/orbitron_regular"
         android:title="@string/ordenestxtbtn" />
 </menu>

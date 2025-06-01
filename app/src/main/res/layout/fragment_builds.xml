@@ -3,38 +3,37 @@
     android:id="@+id/swipe"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_marginTop="32dp">
+    android:layout_marginTop="32dp"
+    android:layout_marginBottom="32dp">
 
-    <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    <FrameLayout
         android:id="@+id/builds_container"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginTop="32dp"
         android:padding="16dp">
 
-        <!-- Muestra una barra de progreso si necesita cargar datos -->
         <ProgressBar
             android:id="@+id/progresodeCarga"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center" />
 
-        <!-- Si no hay nada se muestra esto -->
+        <!-- Texto para cuando no hay builds -->
         <TextView
             android:id="@+id/buildsVaciasTxt"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:text="No hay builds aún"
+            android:text="@string/nobuildsTxt"
             android:textAppearance="?attr/textAppearanceBody1"
             android:visibility="gone" />
 
-        <!-- El recycle view donde se deben de mostrar las builds -->
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/buildsRv"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:visibility="gone" />
-
+            android:visibility="gone"
+            android:clipToPadding="false"
+            android:paddingBottom="56dp" />
     </FrameLayout>
 </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>

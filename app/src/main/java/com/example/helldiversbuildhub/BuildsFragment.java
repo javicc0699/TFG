@@ -19,6 +19,7 @@ import com.google.firebase.firestore.EventListener;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.FirebaseFirestoreException;
 import com.google.firebase.firestore.QuerySnapshot;
+import com.google.firebase.firestore.Query;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -66,7 +67,7 @@ public class BuildsFragment extends Fragment {
         buildsRv.setVisibility(View.GONE);
 
         db.collection("builds")
-                .orderBy("date")  // Ordenar por fecha, luego lo puedo cambiar por mayor nº de likes cuando funcione.
+                .orderBy("date", Query.Direction.DESCENDING)// Ordenar por fecha, luego lo puedo cambiar por mayor nº de likes cuando funcione.
                 .addSnapshotListener((snapshots, error) -> {
                     swipe.setRefreshing(false);
                     progresodeCarga.setVisibility(View.GONE);
@@ -102,4 +103,6 @@ public class BuildsFragment extends Fragment {
                     }
                 });
     }
+
+
 }

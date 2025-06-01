@@ -18,4 +18,6 @@
     <string name="subirtxt">Subir</string>
     <string name="ordenestxtbtn">Órdenes</string>
     <string name="faccionTxt">Facción (Desliza para ver más)</string>
+    <string name="nobuildsTxt">No hay builds todavía</string>
+    <string name="libTxt">Liberación</string>
 </resources>

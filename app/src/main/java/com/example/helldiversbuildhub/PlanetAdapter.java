@@ -77,6 +77,70 @@ public class PlanetAdapter extends RecyclerView.Adapter<PlanetAdapter.PlanetView
                 break;
         }
 
+        // Aqui se ponen las imagenes acorde con el tipo de bioma
+
+        String slug = null;
+        if (planet.getBiome() != null) {
+            slug = planet.getBiome().getSlug();
+        }
+        int biomeResId;
+        if (slug == null) {
+            biomeResId = R.drawable.dfltbiome; // Imagen por defecto si no se encuentra el bioma
+        } else {
+            switch (slug.toLowerCase(Locale.ROOT)) {
+                case "canyon":
+                    biomeResId = R.drawable.canyon;
+                    break;
+                case "crimsonmoor":
+                    biomeResId = R.drawable.crimsonmoor;
+                    break;
+                case "desolate":
+                    biomeResId = R.drawable.desolate;
+                    break;
+                case "ethereal":
+                    biomeResId = R.drawable.ethereal;
+                    break;
+                case "highlands":
+                    biomeResId = R.drawable.highlands;
+                    break;
+                case "icemoss":
+                    biomeResId = R.drawable.icemoss;
+                    break;
+                case "jungle":
+                    biomeResId = R.drawable.jungle;
+                    break;
+                case "mesa":
+                    biomeResId = R.drawable.mesa;
+                    break;
+                case "moon":
+                    biomeResId = R.drawable.moon;
+                    break;
+                case "morass":
+                    biomeResId = R.drawable.morass;
+                    break;
+                case "rainforest":
+                    biomeResId = R.drawable.rainforest;
+                    break;
+                case "swamp":
+                    biomeResId = R.drawable.swamp;
+                    break;
+                case "toxic":
+                    biomeResId = R.drawable.toxic;
+                    break;
+                case "undergrowth":
+                    biomeResId = R.drawable.undergrowth;
+                    break;
+                case "winter":
+                    biomeResId = R.drawable.winter;
+                    break;
+                default:
+                    biomeResId = R.drawable.dfltbiome;
+                    break;
+            }
+        }
+        holder.biomeImg.setImageResource(biomeResId);
+
+
         // Aqui se asignan los colores obtenidos del switch
         holder.card.setCardBackgroundColor(bgColor);
         holder.card.setStrokeColor(borderColor);
@@ -84,6 +148,7 @@ public class PlanetAdapter extends RecyclerView.Adapter<PlanetAdapter.PlanetView
         holder.factionIcon.setImageResource(iconRes);
 
 
+        // Es necesario comprobar la version de android para poder cambiar el color de la barra de progreso.
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
             holder.progressBar.setProgressTintList(ColorStateList.valueOf(borderColor));
             holder.progressBar.setProgressBackgroundTintList(ColorStateList.valueOf(bgColor));
