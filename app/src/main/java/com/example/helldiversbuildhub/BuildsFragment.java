@@ -67,7 +67,7 @@ public class BuildsFragment extends Fragment {
         buildsRv.setVisibility(View.GONE);
 
         db.collection("builds")
-                .orderBy("date", Query.Direction.DESCENDING)// Ordenar por fecha, luego lo puedo cambiar por mayor nº de likes cuando funcione.
+                .orderBy("date", Query.Direction.DESCENDING)// Ordenar por fecha de mas nuevo a mas antiguo.
                 .addSnapshotListener((snapshots, error) -> {
                     swipe.setRefreshing(false);
                     progresodeCarga.setVisibility(View.GONE);

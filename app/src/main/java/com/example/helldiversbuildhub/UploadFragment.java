@@ -53,18 +53,18 @@ public class UploadFragment extends Fragment {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
 
-        View root = inflater.inflate(R.layout.fragment_upload, container, false);
+        View view = inflater.inflate(R.layout.fragment_upload, container, false);
 
         // Referencias a Spinners e ImageViews
-        spinnersStrats[0] = root.findViewById(R.id.firstStratSpn);
-        spinnersStrats[1] = root.findViewById(R.id.secondStratSpn);
-        spinnersStrats[2] = root.findViewById(R.id.thirdStratSpn);
-        spinnersStrats[3] = root.findViewById(R.id.fourthStratSpn);
+        spinnersStrats[0] = view.findViewById(R.id.firstStratSpn);
+        spinnersStrats[1] = view.findViewById(R.id.secondStratSpn);
+        spinnersStrats[2] = view.findViewById(R.id.thirdStratSpn);
+        spinnersStrats[3] = view.findViewById(R.id.fourthStratSpn);
 
-        iconosStrats[0] = root.findViewById(R.id.firstStratImg);
-        iconosStrats[1] = root.findViewById(R.id.secondStratImg);
-        iconosStrats[2] = root.findViewById(R.id.thirdStratImg);
-        iconosStrats[3] = root.findViewById(R.id.fourthStratImg);
+        iconosStrats[0] = view.findViewById(R.id.firstStratImg);
+        iconosStrats[1] = view.findViewById(R.id.secondStratImg);
+        iconosStrats[2] = view.findViewById(R.id.thirdStratImg);
+        iconosStrats[3] = view.findViewById(R.id.fourthStratImg);
 
         // Carga de datos de estratagemas
         String[] nombres = getResources().getStringArray(R.array.estratagemas_nombre);
@@ -81,26 +81,26 @@ public class UploadFragment extends Fragment {
         configurarSpinnersEstratagemas();
 
         // Configura los spinners e iconos de armas primarias
-        primaryWpnSpn = root.findViewById(R.id.primaryWpnSpn);
-        primaryWpnImg = root.findViewById(R.id.primaryWpnImg);
-        configurarSpinnersArmasPrimarias(root);
+        primaryWpnSpn = view.findViewById(R.id.primaryWpnSpn);
+        primaryWpnImg = view.findViewById(R.id.primaryWpnImg);
+        configurarSpinnersArmasPrimarias(view);
 
         // Configura los spinners e iconos de armas secundarias
-        secondaryWpnImg = root.findViewById(R.id.secondaryWpnImg);
-        secondaryWpnSpn = root.findViewById(R.id.secondaryWpnSpn);
-        configurarSpinnersArmasSecundarias(root);
+        secondaryWpnImg = view.findViewById(R.id.secondaryWpnImg);
+        secondaryWpnSpn = view.findViewById(R.id.secondaryWpnSpn);
+        configurarSpinnersArmasSecundarias(view);
 
         // Configura los spinners de las pasivas de las armaduras;
-        armorPassiveImg = root.findViewById(R.id.armorPassiveImg);
-        armorPassiveSpn = root.findViewById(R.id.armorPassiveSpn);
-        configurarSpinnersPasivas(root);
+        armorPassiveImg = view.findViewById(R.id.armorPassiveImg);
+        armorPassiveSpn = view.findViewById(R.id.armorPassiveSpn);
+        configurarSpinnersPasivas(view);
 
         // Configura los spinners e iconos de los potenciadores;
-        boosterSpn = root.findViewById(R.id.boosterSpn);
-        boosterImg = root.findViewById(R.id.boosterImg);
-        configurarSpinnersPotenciadores(root);
+        boosterSpn = view.findViewById(R.id.boosterSpn);
+        boosterImg = view.findViewById(R.id.boosterImg);
+        configurarSpinnersPotenciadores(view);
 
-        uploadBtn = root.findViewById(R.id.uploadBtn);
+        uploadBtn = view.findViewById(R.id.uploadBtn);
 
         FirebaseFirestore db = FirebaseFirestore.getInstance();
         FirebaseAuth auth = FirebaseAuth.getInstance();
@@ -213,7 +213,7 @@ public class UploadFragment extends Fragment {
         });
 
 
-        return root;
+        return view;
 
 
     }
