@@ -2,14 +2,19 @@ package com.example.helldiversbuildhub;
 
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.MenuItem;
 import android.view.View;
+import android.view.ViewGroup;
 import android.view.Window;
 import android.view.WindowManager;
+import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.app.AppCompatDelegate;
+import androidx.core.content.res.ResourcesCompat;
 import androidx.fragment.app.Fragment;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
@@ -80,6 +85,37 @@ public class MainActivity extends AppCompatActivity {
             }
             return false;
         });
+
+
+// Carga la fuente personalizada
+        Typeface orbitron = ResourcesCompat.getFont(this, R.font.orbitron_bold);
+
+// Recorre todos los ítems del bottomnavigationview
+        for (int i = 0; i < bottomNavigationView.getMenu().size(); i++) {
+            final MenuItem item = bottomNavigationView.getMenu().getItem(i);
+
+
+            bottomNavigationView.post(() -> {
+                View itemView = bottomNavigationView.findViewById(item.getItemId());
+
+                if (itemView instanceof ViewGroup) {
+                    setFontToViewGroup((ViewGroup) itemView, orbitron);
+                }
+            });
+        }
+
+    }
+
+    // Este metodo hace que la fuente se aplique tambien en los botones del navigation.
+    private void setFontToViewGroup(ViewGroup viewGroup, Typeface font) {
+        for (int i = 0; i < viewGroup.getChildCount(); i++) {
+            View child = viewGroup.getChildAt(i);
+            if (child instanceof TextView) {
+                ((TextView) child).setTypeface(font);
+            } else if (child instanceof ViewGroup) {
+                setFontToViewGroup((ViewGroup) child, font);
+            }
+        }
     }
 
     @Override
