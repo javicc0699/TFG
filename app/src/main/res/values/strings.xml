@@ -17,7 +17,15 @@
     <string name="buildstxtbtn">Builds</string>
     <string name="subirtxt">Subir</string>
     <string name="ordenestxtbtn">Órdenes</string>
-    <string name="faccionTxt">Facción (Desliza para ver más)</string>
+    <string name="faccionTxt">Facción</string>
     <string name="nobuildsTxt">No hay builds todavía</string>
     <string name="libTxt">Liberación</string>
+    <string name="termTxt">Termínidos</string>
+    <string name="illTxt">Iluminados</string>
+    <string name="botsTxt">Bots</string>
+    <string name="hintEtTxt">Nombre de la build</string>
+    <string name="tittxt">Título</string>
+    <string name="codestratTxt">Código de la estratagema</string>
+
+
 </resources>

@@ -265,17 +265,6 @@
             android:orientation="horizontal">
 
             <Button
-                android:id="@+id/resetBtn"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:backgroundTint="@color/reset_btn"
-                android:fontFamily="@font/orbitron_black"
-                android:text="Reset"
-                android:textColor="@color/black"
-                app:cornerRadius="5dp" />
-
-            <Button
                 android:id="@+id/uploadBtn"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"

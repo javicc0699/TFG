@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--
+    <string-array name="estratagemas_nombre">
+        <item>Eagle Strafing Run</item>
+        <item>Eagle Cluster Bomb</item>
+        <item>Eagle 500kg Bomb</item>
+        <item>Eagle 110mm Rocket Pods</item>
+        <item>Eagle Airstrike</item>
+        <item>Eagle Smoke Strike</item>
+        <item>Eagle Napalm Strike</item>
+        <item>Orbital Airburst Strike</item>
+        <item>Orbital Walking Barrage</item>
+        <item>Orbital 120mm HE Barrage</item>
+        <item>Orbital EMS Strike</item>
+        <item>Orbital Gas Strike</item>
+        <item>Orbital Gatling Barrage</item>
+        <item>Orbital Smoke Strike</item>
+        <item>Orbital Laser</item>
+        <item>Orbital Napalm Strike</item>
+        <item>Orbital Precision Strike</item>
+        <item>Orbital Railcannon Strike</item>
+        <item>Orbital 380mm HE Barrage</item>
+        <item>MG-43 Machine Gun</item>
+        <item>MG-206 Heavy Machine Gun</item>
+        <item>Super Earth Flag</item>
+        <item>AC-8 Autocannon</item>
+        <item>RS-422 Railgun</item>
+        <item>MLS-4X Commando</item>
+        <item>ARC-3 Arc Thrower</item>
+        <item>RL-77 Airburst Rocket Launcher</item>
+        <item>FAF-14 Spear</item>
+        <item>CB-9 Exploding Crossbow</item>
+        <item>GL-21 Grenade Launcher</item>
+        <item>FLAM-40 Flamethrower</item>
+        <item>EAT-17 Expendable Anti-Tank</item>
+        <item>LAS-98 Laser Cannon</item>
+        <item>PLAS-1 Scorcher</item>
+        <item>LAS-99 Quasar Cannon</item>
+        <item>APW-1 Anti-Materiel Rifle</item>
+        <item>GR-8 Recoilless Rifle</item>
+        <item>StA-X3 W.A.S.P. Launcher</item>
+        <item>AX/LAS-5 "Guard Dog" Rover</item>
+        <item>AX/AR-23 "Liberator" Rover</item>
+        <item>AX/AR-23 "Laser" Rover</item>
+        <item>SH-20 Ballistic Shield Backpack</item>
+        <item>SH-32 Directional Shield Backpack</item>
+        <item>SH-22 Shield Generator Pack</item>
+        <item>B-1 Supply Pack</item>
+        <item>LIFT-850 Jump Pack</item>
+        <item>LIFT-850 Jump Pack</item>
+        <item>NUX-223 Hellbomb</item>
+        <item>EXO-45 Patriot Exosuit</item>
+        <item>EXO-48 Emancipator Exosuit</item>
+        <item>MC-109 Recon Vehicle</item>
+        <item>FX-12 Shield Generator Relay</item>
+        <item>A/MG-43 Machine Gun Sentry</item>
+        <item>A/AC-8 Autocannon Sentry</item>
+        <item>A/MLS-4X Rocket Sentry</item>
+        <item>A/M-23 EMS Sentry</item>
+        <item>A/G-16 Gatling Sentry</item>
+        <item>A/M-12 Mortar Sentry</item>
+        <item>A/M-12 Mortar Sentry</item>
+        <item>MD-6 Anti-Personnel Minefield</item>
+        <item>MD-14 Incendiary Mines</item>
+        <item>MD-13 Gas Mines</item>
+        <item>MD-13 Gas Mines</item>
+        <item>GL-21 Grenade Launcher Emplacement</item>
+        <item>E/MG-101 HMG Emplacement</item>
+        <item>E/AC-8 Autocannon Emplacement</item>
+        <item>A/ARC-3 Tesla Tower</item>
+    </string-array>
+
+    <string-array name="estratagemas_iconos">
+        <item>@drawable/aguilaametralladora</item>
+        <item>@drawable/aguilaracimo</item>
+        <item>@drawable/aguilanuclear</item>
+        <item>@drawable/cientodiez</item>
+        <item>@drawable/aguilaereo</item>
+        <item>@drawable/aguilahumo</item>
+        <item>@drawable/aguilanapalm</item>
+        <item>@drawable/orbitalairbust</item>
+        <item>@drawable/orbitalcaminante</item>
+        <item>@drawable/orbitalcientoveinte</item>
+        <item>@drawable/orbitalems</item>
+        <item>@drawable/orbitalgas</item>
+        <item>@drawable/orbitalgatling</item>
+        <item>@drawable/orbitalhumo</item>
+        <item>@drawable/orbitallaser</item>
+        <item>@drawable/orbitalnapalm</item>
+        <item>@drawable/orbitalprecision</item>
+        <item>@drawable/orbitalriel</item>
+        <item>@drawable/orbitaltresochenta</item>
+        <item>@drawable/ametralladora</item>
+        <item>@drawable/ametralladorapesada</item>
+        <item>@drawable/bandera</item>
+        <item>@drawable/canyonautomatico</item>
+        <item>@drawable/canyonriel</item>
+        <item>@drawable/comando</item>
+        <item>@drawable/esterilizador</item>
+        <item>@drawable/explosionaerea</item>
+        <item>@drawable/lanza</item>
+        <item>@drawable/lanzaarcos</item>
+        <item>@drawable/lanzallamas</item>
+        <item>@drawable/lanzagranadas</item>
+        <item>@drawable/lanzamisilesdesechable</item>
+        <item>@drawable/laser</item>
+        <item>@drawable/leal</item>
+        <item>@drawable/quasar</item>
+        <item>@drawable/rifleantiarmadura</item>
+        <item>@drawable/sinretroceso</item>
+        <item>@drawable/wasp</item>
+        <item>@drawable/alientoperro</item>
+        <item>@drawable/perrolaser</item>
+        <item>@drawable/perroliberador</item>
+        <item>@drawable/escudobalistico</item>
+        <item>@drawable/escudodireccional</item>
+        <item>@drawable/generadorescudo</item>
+        <item>@drawable/mochilasuministros</item>
+        <item>@drawable/mochilaplaneo</item>
+        <item>@drawable/mochilasalto</item>
+        <item>@drawable/hellbombportatil</item>
+        <item>@drawable/exotrajeemancipador</item>
+        <item>@drawable/exotrajepatriota</item>
+        <item>@drawable/coche</item>
+        <item>@drawable/bobinadeescudo</item>
+        <item>@drawable/centinelaametrallador</item>
+        <item>@drawable/centinelaautomatico</item>
+        <item>@drawable/centinelacohete</item>
+        <item>@drawable/centinelaemp</item>
+        <item>@drawable/centinelagatling</item>
+        <item>@drawable/centinelallameante</item>
+        <item>@drawable/centinelamortero</item>
+        <item>@drawable/minaantipersona</item>
+        <item>@drawable/minasantitanque</item>
+        <item>@drawable/minasdegas</item>
+        <item>@drawable/minasincendiarias</item>
+        <item>@drawable/parapeto</item>
+        <item>@drawable/torretaametralladora</item>
+        <item>@drawable/torretaantitanque</item>
+        <item>@drawable/torretesla</item>
+    </string-array>
+
+
+    -->
+</resources>

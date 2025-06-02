@@ -29,25 +29,25 @@
         <item>Orbital de 380mm</item>
 
         <!-- Apoyo !-->
-        <item>Ametralladora</item>
-        <item>Ametralladora Pesada</item>
-        <item>Una Única Bandera</item>
-        <item>Cañón Automático</item>
-        <item>Cañón de Riel</item>
-        <item>Comando</item>
-        <item>Esterilizador</item>
-        <item>Cañón de Explosión Aérea</item>
-        <item>Lanza</item>
-        <item>Lanzaarcos</item>
-        <item>Lanzagranadas</item>
-        <item>Lanzallamas</item>
-        <item>Lanzamisiles Desechable</item>
-        <item>Cañón Láser</item>
-        <item>Leal</item>
-        <item>Cañón Quasar</item>
-        <item>Rifle Antiequipamiento</item>
-        <item>Rifle sin Retroceso</item>
-        <item>Lanzamisiles W.A.S.P</item>
+        <item>Ametralladora (MG-43)</item>
+        <item>Ametralladora Pesada (MG-206)</item>
+        <item>Una Única Bandera (Super Earth Flag)</item>
+        <item>Cañón Automático (AC-8)</item>
+        <item>Cañón de Riel (RS-422)</item>
+        <item>Comando (MLS-4X)</item>
+        <item>Esterilizador (ARC-3)</item>
+        <item>Cañón de Explosión Aérea (RL-77)</item>
+        <item>Lanza (FAF-14)</item>
+        <item>Lanzaarcos (CB-9)</item>
+        <item>Lanzagranadas (GL-21)</item>
+        <item>Lanzallamas (FLAM-40)</item>
+        <item>Lanzamisiles Desechable (EAT-17)</item>
+        <item>Cañón Láser (LAS-98)</item>
+        <item>Leal (PLAS-1)</item>
+        <item>Cañón Quasar (LAS-99)</item>
+        <item>Rifle Antiequipamiento (APW-1)</item>
+        <item>Rifle sin Retroceso (GR-8)</item>
+        <item>Lanzamisiles W.A.S.P (StA-X3)</item>
 
         <!-- Mochilas, exotrajes y vehículos !-->
         <item>Mochila Rover "Aliento de Perro"</item>
@@ -65,22 +65,22 @@
         <item>Vehículo de Reconocimiento</item>
 
         <!-- Centinelas !-->
-        <item>Relevo Generador de Escudo</item>
-        <item>Centinela con Ametralladora</item>
-        <item>Centinela con Cañón Automático</item>
-        <item>Centinela con Cohete</item>
-        <item>Centinela EMS</item>
-        <item>Centinela con Gatling</item>
-        <item>Centinela Llameante</item>
-        <item>Centinela con Mortero</item>
-        <item>Campo de Minas Antipersona</item>
-        <item>Campo de Minas Antitanque</item>
-        <item>Campo de Minas de Gas</item>
-        <item>Campo de Minas Incendiarias</item>
-        <item>Parapeto con Lanzagranadas</item>
-        <item>Emplazamiento Ametralladora Pesada</item>
-        <item>Emplazamiento Antitanque</item>
-        <item>Torre Tesla</item>
+        <item>Relevo Generador de Escudo (FX-12)</item>
+        <item>Centinela con Ametralladora (A/MG-43)</item>
+        <item>Centinela con Cañón Automático (A/AC-8)</item>
+        <item>Centinela con Cohete (A/MLS-4X)</item>
+        <item>Centinela EMS (A/M-23)</item>
+        <item>Centinela con Gatling (A/G-16)</item>
+        <item>Centinela Llameante (no tiene código oficial)</item>
+        <item>Centinela con Mortero (A/M-12)</item>
+        <item>Campo de Minas Antipersona (MD-6)</item>
+        <item>Campo de Minas Antitanque (MD-14)</item>
+        <item>Campo de Minas de Gas (MD-13)</item>
+        <item>Campo de Minas Incendiarias (MD-14)</item>
+        <item>Parapeto con Lanzagranadas (GL-21 Emplacement)</item>
+        <item>Emplazamiento Ametralladora Pesada (E/MG-101)</item>
+        <item>Emplazamiento Antitanque (E/AC-8)</item>
+        <item>Torre Tesla (A/ARC-3)</item>
 
 
 
@@ -171,46 +171,130 @@
 
     </string-array>
 
+        <string-array name="estratagemas_codigos">
+
+            <!-- Águilas -->
+            <item>↑→→</item> <!-- Ataque de Águila ametralladora -->
+            <item>↑→↓↓→</item> <!-- Ataque de Águila racimo -->
+            <item>↑→↓↓↓</item> <!-- Ataque de Águila 500kg -->
+            <item>↑→↑←</item> <!-- Ataque de Águila 110mm -->
+            <item>↑→↓→</item> <!-- Ataque de Águila aéreo -->
+            <item>↑→↑↓</item> <!-- Ataque de Águila de humo -->
+            <item>↑→↓↑</item> <!-- Ataque de Águila de napalm -->
+
+            <!-- Orbitales -->
+            <item>→→↑</item> <!-- Orbital Aéreo -->
+            <item>→↓→↓→↓</item> <!-- Orbital Caminante -->
+            <item>→↓←→↓←</item> <!-- Orbital de 120mm -->
+            <item>→→←↓</item> <!-- Orbital EMP -->
+            <item>→→↓→</item> <!-- Orbital Gas -->
+            <item>→↓←↑↑</item> <!-- Orbital Gatling -->
+            <item>→→↓↑</item> <!-- Orbital Humo -->
+            <item>→↓↑→↓</item> <!-- Orbital Láser -->
+            <item>→↓↑↑←↓↓</item> <!-- Orbital Napalm -->
+            <item>→→↑</item> <!-- Orbital de Precisión -->
+            <item>→↑↓↓→</item> <!-- Orbital de Riel -->
+            <item>→↓↑↑←↓↓</item> <!-- Orbital de 380mm -->
+
+            <!-- Apoyo -->
+            <item>↓←↓↑→</item> <!-- Ametralladora (MG-43) -->
+            <item>↓←↑↓↓</item> <!-- Ametralladora Pesada (MG-206) -->
+            <item>↓↑↓↑</item> <!-- Una Única Bandera (Super Earth Flag) -->
+            <item>↓←↓↑↑→</item> <!-- Cañón Automático (AC-8) -->
+            <item>↓→←↓↓↑←→</item> <!-- Cañón de Riel (RS-422) -->
+            <item>↓←↑↓↑←</item> <!-- Comando (MLS-4X) -->
+            <item>↓→↑←↓</item> <!-- Esterilizador (ARC-3) -->
+            <item>↓↓↑↓↓</item> <!-- Cañón de Explosión Aérea (RL-77) -->
+            <item>↓↓↑↓↓</item> <!-- Lanza (FAF-14) -->
+            <item>↓←↑←↓↓</item> <!-- Lanzaarcos (CB-9) -->
+            <item>↓←↑←↓↓</item> <!-- Lanzagranadas (GL-21) -->
+            <item>↓←↑↓↑</item> <!-- Lanzallamas (FLAM-40) -->
+            <item>↓↓←↑→</item> <!-- Lanzamisiles Desechable (EAT-17) -->
+            <item>↓←↓↑←</item> <!-- Cañón Láser (LAS-98) -->
+            <item>↓↓↑←→</item> <!-- Leal (PLAS-1) -->
+            <item>↓↓↑←→</item> <!-- Cañón Quasar (LAS-99) -->
+            <item>↓←→↑↓</item> <!-- Rifle Antiequipamiento (APW-1) -->
+            <item>↓←→→←</item> <!-- Rifle sin Retroceso (GR-8) -->
+            <item>↓←↑↓↑→</item> <!-- Lanzamisiles W.A.S.P (StA-X3) -->
+
+            <!-- Mochilas, exotrajes y vehículos -->
+            <item>↓↑←↑→→</item> <!-- Mochila Rover "Aliento de Perro" -->
+            <item>↓↑←↑→↓</item> <!-- Mochila Rover "Perro Guardián Láser" -->
+            <item>↓↑←↑→→</item> <!-- Mochila Rover "Perro Guardián Liberador" -->
+            <item>↓←↓↓↑←</item> <!-- Mochila Escudo Balístico -->
+            <item>↓↑←↓→→</item> <!-- Mochila Escudo Direccional -->
+            <item>↓↑←↓→→</item> <!-- Mochila Generadora de Escudo -->
+            <item>↓←↓↑↑↓</item> <!-- Mochila de Suministros -->
+            <item>↓↑↑↓↑</item> <!-- Mochila Planeadora -->
+            <item>↓↑↑↓↑</item> <!-- Mochila de Salto -->
+            <item>↓↑←↓↑→↓↑</item> <!-- Bomba Hell Portátil -->
+            <item>←↓→↑←↓↓</item> <!-- Exotraje Emancipador -->
+            <item>←↓→↑←↓↓</item> <!-- Exotraje Patriota -->
+            <item>↓↑←↓→→</item> <!-- Vehículo de Reconocimiento -->
+
+            <!-- Centinelas -->
+            <item>↓↓←→←→</item> <!-- Relevo Generador de Escudo (FX-12) -->
+            <item>↓↑→→↑</item> <!-- Centinela con Ametralladora (A/MG-43) -->
+            <item>↓↑→↑←↑</item> <!-- Centinela con Cañón Automático (A/AC-8) -->
+            <item>↓↑→→←</item> <!-- Centinela con Cohete (A/MLS-4X) -->
+            <item>↓↓↑↑←</item> <!-- Centinela EMS (A/M-23) -->
+            <item>↓↑→←↓</item> <!-- Centinela con Gatling (A/G-16) -->
+            <item>↓↑→→↓</item> <!-- Centinela Llameante -->
+            <item>↓↑→→↓</item> <!-- Centinela con Mortero (A/M-12) -->
+            <item>↓←↑→</item> <!-- Campo de Minas Antipersona (MD-6) -->
+            <item>↓←←↓</item> <!-- Campo de Minas Antitanque (MD-14) -->
+            <item>↓←←↓</item> <!-- Campo de Minas de Gas (MD-13) -->
+            <item>↓←←↓</item> <!-- Campo de Minas Incendiarias (MD-14) -->
+            <item>↓←↑←↓↓</item> <!-- Parapeto con Lanzagranadas (GL-21 Emplacement) -->
+            <item>↓↑←→→←</item> <!-- Emplazamiento Ametralladora Pesada (E/MG-101) -->
+            <item>↓↑←→→←</item> <!-- Emplazamiento Antitanque (E/AC-8) -->
+            <item>↓↑→↑←→</item> <!-- Torre Tesla (A/ARC-3) -->
+
+        </string-array>
+
+
+
+
 
     <!-- Arrays de Strings e Iconos para las armas primarias -->
     <string-array name="armas_primarias">
 
-        <item>Ablandador</item>
-        <item>Abrasador</item>
-        <item>Adjudicadora</item>
-        <item>Alto Ahí</item>
-        <item>Ballesta Explosiva</item>
-        <item>Barbacoa</item>
-        <item>Blitzer</item>
-        <item>Caballero</item>
-        <item>Castigadora 8S</item>
-        <item>Castigadora</item>
-        <item>Castigadora de Plasma</item>
-        <item>Constitución</item>
-        <item>Defensor</item>
-        <item>Diligencia</item>
-        <item>Diligencia contra Francotirador</item>
-        <item>Dominador</item>
-        <item>Enmienda</item>
-        <item>Erupcionador</item>
-        <item>Guadaña</item>
-        <item>Hoz</item>
-        <item>Hoz de doble filo</item>
-        <item>Incendiador</item>
-        <item>Liberador</item>
-        <item>Liberador Carabina</item>
-        <item>Liberador Contusivo</item>
-        <item>Liberador Penetrador</item>
-        <item>Ojo de Halcón</item>
-        <item>Rompedor Pulveriza y Reza</item>
-        <item>Pummeler</item>
-        <item>Purificador</item>
-        <item>Reprimenda</item>
-        <item>Rifle Acelerador</item>
-        <item>Rifle de Asalto</item>
-        <item>Rompedor</item>
-        <item>Rompedor Incendiario</item>
-        <item>SMG</item>
+        <item>AR-61 Ablandador</item>
+        <item>PLAS-1 Abrasador</item>
+        <item>BR-14 Adjudicadora</item>
+        <item>SG-20 Alto Ahí</item>
+        <item>CB-9 Ballesta Explosiva</item>
+        <item>SG-451 Barbacoa</item>
+        <item>ARC-12 Blitzer</item>
+        <item>MP-98 Caballero</item>
+        <item>SG-8S Castigadora 8S</item>
+        <item>SG-8 Castigadora</item>
+        <item>SG-8P Castigadora de Plasma</item>
+        <item>R-2124 Constitución</item>
+        <item>SMG-37 Defensor</item>
+        <item>R-63 Diligencia</item>
+        <item>R-63CS Diligencia contra Francotirador</item>
+        <item>JAR-5 Dominador</item>
+        <item>R-2 Enmienda</item>
+        <item>R-36 Erupcionador</item>
+        <item>LAS-5 Guadaña</item>
+        <item>LAS-16 Hoz</item>
+        <item>LAS-17 Hoz de doble filo</item>
+        <item>PLAS-1 Incendiador</item>
+        <item>AR-23 Liberador</item>
+        <item>AR-23A Liberador Carabina</item>
+        <item>AR-23C Liberador Contusivo</item>
+        <item>AR-23P Liberador Penetrador</item>
+        <item>R-6 Ojo de Halcón</item>
+        <item>SG-225SP Rompedor Pulveriza y Reza</item>
+        <item>SMG-72 Pummeler</item>
+        <item>PLAS-101 Purificador</item>
+        <item>SMG-32 Reprimenda</item>
+        <item>PLAS-39 Rifle Acelerador</item>
+        <item>StA-52 Rifle de Asalto</item>
+        <item>SG-225 Rompedor</item>
+        <item>SG-225IE Rompedor Incendiario</item>
+        <item>StA-11 SMG</item>
 
     </string-array>
 
@@ -257,22 +341,22 @@
 
     <string-array name="armas_secundarias">
 
-        <item>Daga</item>
-        <item>Garra</item>
-        <item>Hacha de Combate</item>
-        <item>Incendiador Recortado</item>
-        <item>Lanza Aturdidora</item>
-        <item>Leal Plasma</item>
-        <item>Pacificadora</item>
-        <item>Pistola de Granadas</item>
-        <item>Pistola de Stims</item>
-        <item>Porra</item>
-        <item>Quemador</item>
-        <item>Redentora</item>
-        <item>Sable</item>
-        <item>Senadora</item>
-        <item>Ultimatum</item>
-        <item>Veredicto</item>
+        <item>LAS-7 Daga</item>
+        <item>P-19 Garra</item>
+        <item>CQC-5 Hacha de Combate</item>
+        <item>SG-22 Guerrillero</item>
+        <item>CQC-19 Lanza Aturdidora</item>
+        <item>P-19 Leal Plasma</item>
+        <item>P-2 Pacificadora</item>
+        <item>GP-31 Pistola de Granadas</item>
+        <item>P-11 Pistola de Stims</item>
+        <item>CQC-30 Porra</item>
+        <item>P-72 Quemador</item>
+        <item>P-19 Redentora</item>
+        <item>LAS-7 Sable</item>
+        <item>P-4 Senadora</item>
+        <item>GP-31 Ultimatum</item>
+        <item>P-113 Veredicto</item>
 
     </string-array>
 

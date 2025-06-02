@@ -1,20 +1,22 @@
 package com.example.helldiversbuildhub;
 
 import android.content.Context;
+
+import androidx.appcompat.app.AlertDialog;
+import androidx.annotation.NonNull;
+import androidx.recyclerview.widget.RecyclerView;
+
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
-
-import androidx.annotation.NonNull;
-import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.firebase.auth.FirebaseAuth;
 
 import java.util.Collections;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -24,6 +26,7 @@ public class BuildsAdapter extends RecyclerView.Adapter<BuildsAdapter.BuildsView
     private final List<Build> items;
 
     private final Map<String, Integer> estratagemasMap;
+    private final Map<String, String> estratagemasCodigosMap;
     private final Map<String, Integer> primariaMap;
     private final Map<String, Integer> secundariaMap;
     private final Map<String, Integer> pasivaArmMap;
@@ -40,6 +43,14 @@ public class BuildsAdapter extends RecyclerView.Adapter<BuildsAdapter.BuildsView
         pasivaArmMap = Util.mapFromArrays(context, R.array.pasivas_armadura, R.array.pasivas_armadura_iconos);
         potenciadorMap = Util.mapFromArrays(context, R.array.potenciadores_nombres, R.array.potenciadores_iconos);
         faccionMap = Util.mapFromArrays(context, R.array.facciones_nombres, R.array.facciones_iconos);
+
+        // COdigo para linkear las estratagemas con sus codigos
+        estratagemasCodigosMap = new HashMap<>();
+        String[] nombres = context.getResources().getStringArray(R.array.estratagemas_nombre);
+        String[] infos = context.getResources().getStringArray(R.array.estratagemas_codigos);
+        for (int i = 0; i < nombres.length; i++) {
+            estratagemasCodigosMap.put(nombres[i], infos[i]);
+        }
     }
 
     @NonNull
@@ -62,31 +73,44 @@ public class BuildsAdapter extends RecyclerView.Adapter<BuildsAdapter.BuildsView
         // Facción
         Integer fIcon = faccionMap.get(build.faction);
         if (fIcon != null) holder.factionIv.setImageResource(fIcon);
+        else holder.factionIv.setImageDrawable(null);
 
-        // El fragment crasheaba porque detectaba que la lista era null y este fragmento de codigo protege de que crashee.
+        // Estratagemas (null-safe)
         List<String> strats = build.stratagems != null
                 ? build.stratagems
                 : Collections.emptyList();
-        // Primero limpia todas las imágenes
+        // Primero limpia todas las imágenes y listeners
         for (ImageView iv : holder.stratIvs) {
             iv.setImageDrawable(null);
+            iv.setOnClickListener(null);
         }
-        // Luego rellena solo las que existan en la lista
+        // Luego rellena solo las que existan en la lista y asigna el diálogo
         for (int i = 0; i < strats.size() && i < holder.stratIvs.length; i++) {
-            Integer icono = estratagemasMap.get(strats.get(i));
+            String nombreEstr = strats.get(i);
+            Integer icono = estratagemasMap.get(nombreEstr);
             if (icono != null) {
                 holder.stratIvs[i].setImageResource(icono);
+                // Al hacer clic, mostramos un AlertDialog con la instrucción
+                String instruccion = estratagemasCodigosMap.get(nombreEstr);
+                holder.stratIvs[i].setOnClickListener(view -> {
+                    new AlertDialog.Builder(view.getContext(), R.style.Theme_Helldivers_Dialog)
+                            .setTitle(nombreEstr)
+                            .setMessage(instruccion != null
+                                    ? instruccion
+                                    : "Sin códigos de lanzamiento disponibles")
+                            .setPositiveButton("Aceptar", (dialog, which) -> dialog.dismiss())
+                            .show();
+                });
             }
         }
 
-        // Armas, pasiva y potenciador. Esto provocaba crasheos y he puesto el getOrDefault que por lo visto funciona.
+        // Armas, pasiva y potenciador (null-safe con getOrDefault para que no crashee si pasa algo)
         holder.primariaIv.setImageResource(primariaMap.getOrDefault(build.primaryWeapon, 0));
         holder.secundariaIv.setImageResource(secundariaMap.getOrDefault(build.secondaryWeapon, 0));
         holder.armorIv.setImageResource(pasivaArmMap.getOrDefault(build.armorPassive, 0));
         holder.potenciadorIv.setImageResource(potenciadorMap.getOrDefault(build.booster, 0));
-        holder.factionIv.setImageResource(faccionMap.getOrDefault(build.faction, 0));
 
-        // Listeners de like/dislike que tambien llaman al metodo de la Clase Util para que manejan los votos
+        // Listeners de like/dislike que llaman a Util.votarBuild(...)
         holder.likeBtn.setOnClickListener(v -> {
             holder.likeBtn.setEnabled(false);
             String uid = FirebaseAuth.getInstance().getCurrentUser().getUid();

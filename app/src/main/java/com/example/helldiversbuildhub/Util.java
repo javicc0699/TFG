@@ -80,7 +80,7 @@ public class Util {
      *
      * mapFromArrays(...):
      *
-     * Lee un string-array de tu arrays.xml.
+     * Lee un string-array de tu arrays-es.xml.
      *
      * Lee un TypedArray de iconos/drawables.
      *

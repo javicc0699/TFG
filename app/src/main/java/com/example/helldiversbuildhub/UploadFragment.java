@@ -48,6 +48,7 @@ public class UploadFragment extends Fragment {
     private Spinner boosterSpn;
     private ImageView boosterImg;
     private Button uploadBtn;
+    private Button resetBtn;
 
     @Nullable
     @Override
@@ -117,11 +118,8 @@ public class UploadFragment extends Fragment {
                         String buildName = buildNameEt.getText().toString().trim();
                         int checkedId = factionRg.getCheckedRadioButtonId();
                         if (buildName.isEmpty() || checkedId == -1) {
-                            Toast.makeText(requireContext(),
-                                    "Debes ponerle un nombre a tu build y seleccionar facción",
+                            Toast.makeText(requireContext(), "Debes ponerle un nombre a tu build y seleccionar facción",
                                     Toast.LENGTH_SHORT).show();
-
-
                             return;
                         }
 
@@ -130,11 +128,9 @@ public class UploadFragment extends Fragment {
                         else if (checkedId == R.id.rbIluminados) faction = "Iluminados";
                         else faction = "Bots";
 
-
                         FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
                         if (user == null) {
-                            Toast.makeText(requireContext(),
-                                    "Debes iniciar sesión primero",
+                            Toast.makeText(requireContext(), "Debes iniciar sesión primero",
                                     Toast.LENGTH_SHORT).show();
                             return;
                         }
@@ -176,20 +172,8 @@ public class UploadFragment extends Fragment {
                                 .format(new Date());
 
                         // Se crea un objeto build.
-                        Build build = new Build(
-                                buildId,
-                                userId,
-                                username,
-                                buildName,
-                                primaryWpn,
-                                secondaryWpn,
-                                armorPassive,
-                                booster,
-                                faction,
-                                strats,
-                                0,
-                                0,
-                                date
+                        Build build = new Build(buildId, userId, username, buildName, primaryWpn, secondaryWpn, armorPassive, booster, faction, strats, 0,
+                                0, date
                         );
 
                         // Se suben los datos a Firebase
@@ -197,25 +181,23 @@ public class UploadFragment extends Fragment {
                                 .document(buildId)
                                 .set(build)
                                 .addOnSuccessListener(aVoid -> {
-                                    Toast.makeText(getContext(),
-                                            "Build subida con éxito!", Toast.LENGTH_SHORT).show();
+                                    Toast.makeText(getContext(), "Build subida con éxito!", Toast.LENGTH_SHORT).show();
                                     dialog.dismiss();
-                                    // resetBtn.performClick(); a esto le falta que le haga el listener
+
                                 })
                                 .addOnFailureListener(e -> {
                                     Log.e("UploadFragment", "Error al subir build", e);
-                                    Toast.makeText(getContext(),
-                                            "Error al subir build", Toast.LENGTH_SHORT).show();
+                                    Toast.makeText(getContext(), "Error al subir build", Toast.LENGTH_SHORT).show();
                                 });
                     })
                     .setNegativeButton("Cancelar", (d, which) -> d.dismiss())
                     .show();
         });
 
+        // Listener para el botón de reset
+
 
         return view;
-
-
     }
 
     // Este metodo inicializa los spinners de estratagemas y sus iconos
@@ -227,11 +209,7 @@ public class UploadFragment extends Fragment {
             listaCopia.add("-- Selecciona --");
             listaCopia.addAll(nombresBase);
 
-            ArrayAdapter<String> adapter = new ArrayAdapter<>(
-                    requireContext(),
-                    android.R.layout.simple_spinner_item,
-                    listaCopia
-            );
+            ArrayAdapter<String> adapter = new ArrayAdapter<>(requireContext(), android.R.layout.simple_spinner_item, listaCopia);
             adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
             spinnersStrats[indice].setAdapter(adapter);
             spinnersStrats[indice].setSelection(0, false);
@@ -293,7 +271,6 @@ public class UploadFragment extends Fragment {
     }
 
     private void configurarSpinnersArmasPrimarias(View root) {
-
         String[] armas = getResources().getStringArray(R.array.armas_primarias);
         TypedArray typedArray = getResources().obtainTypedArray(R.array.armas_primarias_iconos);
         int typedArrayLongitud = typedArray.length();
@@ -303,21 +280,15 @@ public class UploadFragment extends Fragment {
         }
         typedArray.recycle();
 
-
         List<String> lista = new ArrayList<>();
         lista.add("-- Selecciona arma primaria --");
         lista.addAll(Arrays.asList(armas));
 
-
-        ArrayAdapter<String> adapter = new ArrayAdapter<>(
-                requireContext(),
-                android.R.layout.simple_spinner_item,
-                lista
+        ArrayAdapter<String> adapter = new ArrayAdapter<>(requireContext(), android.R.layout.simple_spinner_item, lista
         );
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         primaryWpnSpn.setAdapter(adapter);
         primaryWpnSpn.setSelection(0, false);
-
 
         primaryWpnSpn.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
@@ -338,7 +309,6 @@ public class UploadFragment extends Fragment {
     }
 
     private void configurarSpinnersArmasSecundarias(View root) {
-
         String[] armas = getResources().getStringArray(R.array.armas_secundarias);
         TypedArray typedArray = getResources().obtainTypedArray(R.array.armas_secundarias_iconos);
         int typedArrayLongitud = typedArray.length();
@@ -348,18 +318,14 @@ public class UploadFragment extends Fragment {
         }
         typedArray.recycle();
 
-
         List<String> lista = new ArrayList<>();
         lista.add("-- Selecciona arma secundaria --");
         lista.addAll(Arrays.asList(armas));
 
-
-        ArrayAdapter<String> adapter = new ArrayAdapter<>(
-                requireContext(), android.R.layout.simple_spinner_item, lista);
+        ArrayAdapter<String> adapter = new ArrayAdapter<>(requireContext(), android.R.layout.simple_spinner_item, lista);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         secondaryWpnSpn.setAdapter(adapter);
         secondaryWpnSpn.setSelection(0, false);
-
 
         secondaryWpnSpn.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
@@ -380,7 +346,6 @@ public class UploadFragment extends Fragment {
     }
 
     private void configurarSpinnersPasivas(View root) {
-
         String[] pasivas = getResources().getStringArray(R.array.pasivas_armadura);
         TypedArray typedArray = getResources().obtainTypedArray(R.array.pasivas_armadura_iconos);
         int typedArrayLongitud = typedArray.length();
@@ -390,18 +355,14 @@ public class UploadFragment extends Fragment {
         }
         typedArray.recycle();
 
-
         List<String> lista = new ArrayList<>();
         lista.add("-- Selecciona una pasiva --");
         lista.addAll(Arrays.asList(pasivas));
 
-
-        ArrayAdapter<String> adapter = new ArrayAdapter<>(
-                requireContext(), android.R.layout.simple_spinner_item, lista);
+        ArrayAdapter<String> adapter = new ArrayAdapter<>(requireContext(), android.R.layout.simple_spinner_item, lista);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         armorPassiveSpn.setAdapter(adapter);
         armorPassiveSpn.setSelection(0, false);
-
 
         armorPassiveSpn.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
@@ -422,7 +383,6 @@ public class UploadFragment extends Fragment {
     }
 
     private void configurarSpinnersPotenciadores(View root) {
-
         String[] potenciadores = getResources().getStringArray(R.array.potenciadores_nombres);
         TypedArray typedArray = getResources().obtainTypedArray(R.array.potenciadores_iconos);
         int typedArrayLongitud = typedArray.length();
@@ -432,18 +392,15 @@ public class UploadFragment extends Fragment {
         }
         typedArray.recycle();
 
-
         List<String> lista = new ArrayList<>();
         lista.add("-- Selecciona un potenciador --");
         lista.addAll(Arrays.asList(potenciadores));
-
 
         ArrayAdapter<String> adapter = new ArrayAdapter<>(
                 requireContext(), android.R.layout.simple_spinner_item, lista);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         boosterSpn.setAdapter(adapter);
         boosterSpn.setSelection(0, false);
-
 
         boosterSpn.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override

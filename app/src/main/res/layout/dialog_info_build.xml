@@ -3,7 +3,6 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-
     android:orientation="vertical"
     android:background="@color/spinner_bg"
     android:padding="24dp">
@@ -13,62 +12,61 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@drawable/spinner_fondo"
-        android:hint="Nombre de la build"
+        android:hint="@string/hintEtTxt"
+        android:fontFamily="@font/orbitron_regular"
         android:textColorHint="@color/spinner_border"
         android:padding="8dp"
         android:textColor="@color/spinner_text"
-        android:inputType="textCapWords"/>
+        android:inputType="textCapWords" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
+        android:fontFamily="@font/orbitron_regular"
         android:text="@string/faccionTxt"
         android:textColor="@color/spinner_text"
         android:textStyle="bold" />
 
-    <HorizontalScrollView
+    <!-- RadioGroup vertical en lugar de HorizontalScrollView -->
+    <RadioGroup
+        android:id="@+id/factionRg"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:fillViewport="true"
         android:layout_marginTop="8dp"
-        android:scrollbars="none">
+        android:orientation="vertical">
 
-        <RadioGroup
-            android:id="@+id/factionRg"
+        <RadioButton
+            android:id="@+id/rbTerminidos"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:text="@string/termTxt"
+            android:fontFamily="@font/orbitron_regular"
+            android:textColor="@color/radiobutton_text_color"
+            app:buttonTint="@color/radio_button_tint"
+            app:buttonTintMode="src_in" />
 
-            <RadioButton
-                android:id="@+id/rbTerminidos"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Termíndos"
-                android:textColor="@color/radiobutton_text_color"
-                app:buttonTint="@color/radio_button_tint"
-                app:buttonTintMode="src_in"/>
+        <RadioButton
+            android:id="@+id/rbIluminados"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="@string/illTxt"
+            android:fontFamily="@font/orbitron_regular"
+            android:textColor="@color/radiobutton_text_color"
+            app:buttonTint="@color/radio_button_tint"
+            app:buttonTintMode="src_in" />
 
-            <RadioButton
-                android:id="@+id/rbIluminados"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:text="Iluminados"
-                android:textColor="@color/radiobutton_text_color"
-                app:buttonTint="@color/radio_button_tint"
-                app:buttonTintMode="src_in"/>
+        <RadioButton
+            android:id="@+id/rbBots"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="@string/botsTxt"
+            android:fontFamily="@font/orbitron_regular"
+            android:textColor="@color/radiobutton_text_color"
+            app:buttonTint="@color/radio_button_tint"
+            app:buttonTintMode="src_in" />
 
-            <RadioButton
-                android:id="@+id/rbBots"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:text="Bots"
-                android:textColor="@color/radiobutton_text_color"
-                app:buttonTint="@color/radio_button_tint"
-                app:buttonTintMode="src_in"/>
-
-        </RadioGroup>
-    </HorizontalScrollView>
+    </RadioGroup>
 </LinearLayout>
