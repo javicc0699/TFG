@@ -1,39 +1,58 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.swiperefreshlayout.widget.SwipeRefreshLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/swipe"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/builds_root"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:layout_marginTop="32dp"
-    android:layout_marginBottom="32dp">
+    android:layout_height="match_parent">
 
-    <FrameLayout
-        android:id="@+id/builds_container"
+    <ImageView
+        android:id="@+id/bgBuilds"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:padding="16dp">
+        android:scaleType="centerCrop"
+        android:src="@drawable/builds_background" />
 
-        <ProgressBar
-            android:id="@+id/progresodeCarga"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center" />
 
-        <!-- Texto para cuando no hay builds -->
-        <TextView
-            android:id="@+id/buildsVaciasTxt"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:text="@string/nobuildsTxt"
-            android:textAppearance="?attr/textAppearanceBody1"
-            android:visibility="gone" />
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#80000000" />
 
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/buildsRv"
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:id="@+id/swipe"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="32dp"
+        android:layout_marginBottom="32dp">
+
+        <FrameLayout
+            android:id="@+id/builds_container"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:visibility="gone"
-            android:clipToPadding="false"
-            android:paddingBottom="56dp" />
-    </FrameLayout>
-</androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+            android:padding="16dp">
+
+            <ProgressBar
+                android:id="@+id/progresodeCarga"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center" />
+
+
+            <TextView
+                android:id="@+id/buildsVaciasTxt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="@string/nobuildsTxt"
+                android:textAppearance="?attr/textAppearanceBody1"
+                android:visibility="gone" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/buildsRv"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:visibility="gone"
+                android:clipToPadding="false"
+                android:paddingBottom="56dp" />
+        </FrameLayout>
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+</FrameLayout>

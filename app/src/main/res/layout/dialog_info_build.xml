@@ -28,7 +28,6 @@
         android:textColor="@color/spinner_text"
         android:textStyle="bold" />
 
-    <!-- RadioGroup vertical en lugar de HorizontalScrollView -->
     <RadioGroup
         android:id="@+id/factionRg"
         android:layout_width="match_parent"

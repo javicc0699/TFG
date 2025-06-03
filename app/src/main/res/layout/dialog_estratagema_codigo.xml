@@ -6,6 +6,8 @@
     android:background="@color/spinner_bg"
     android:padding="24dp">
 
+
+
     <TextView
         android:id="@+id/estratagemTitle"
         android:layout_width="match_parent"
@@ -13,14 +15,23 @@
         android:textColor="@color/spinner_text"
         android:textStyle="bold"
         android:textSize="18sp"
+        android:fontFamily="@font/orbitron_bold"
         android:layout_marginBottom="12dp"
         android:text="@string/tittxt" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/c_digo_de_lanzamiento_txt"
+        android:fontFamily="@font/orbitron_regular"
+        android:textColor="@color/spinner_text"/>
 
     <TextView
         android:id="@+id/estratagemInfo"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textColor="@color/spinner_text"
-        android:textSize="14sp"
+        android:textSize="24sp"
         android:text="@string/codestratTxt" />
 </LinearLayout>

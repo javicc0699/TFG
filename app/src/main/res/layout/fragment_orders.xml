@@ -1,28 +1,60 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/orders_root"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".OrdersFragment">
+    android:layout_height="match_parent">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <ImageView
+        android:id="@+id/bgOrders"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+        android:src="@drawable/superearthflag" />
 
-        <TextView
-            android:id="@+id/textView"
-            android:layout_width="46dp"
-            android:layout_height="33dp"
-            android:layout_marginStart="160dp"
-            android:layout_marginTop="235dp"
-            android:layout_marginEnd="205dp"
-            android:layout_marginBottom="463dp"
-            android:text="↑↑↑↑"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-    </androidx.constraintlayout.widget.ConstraintLayout>
 
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#80000000" />
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="32dp"
+        android:orientation="vertical">
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <!-- ProgressBar central mientras carga -->
+            <ProgressBar
+                android:id="@+id/loadingPb"
+                style="?android:attr/progressBarStyleLarge"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center" />
+
+            <!-- Texto “No hay Major Orders disponibles” -->
+            <TextView
+                android:id="@+id/emptyTv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:gravity="center"
+                android:text="@string/no_hay_major_orders_disponibles"
+                android:textColor="@android:color/white"
+                android:visibility="gone" />
+
+            <!-- RecyclerView para mostrar lista de órdenes -->
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerOrders"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:paddingTop="8dp"
+                android:paddingBottom="8dp"
+                android:visibility="gone" />
+        </FrameLayout>
+    </LinearLayout>
 </FrameLayout>

@@ -1,0 +1,42 @@
+<resources>
+    <!--
+   <string name="app_name">Helldivers Build Hub</string>
+   <string name="percText">Liberation</string>
+
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="error_fragment_message">An error occurred</string>
+    <string name="dismiss_error">Dismiss</string>
+    <string name="loadingtext">Loading...</string>
+    <string name="potenciadorEsp">Booster</string>
+    <string name="pasivaTxt">Armor Passive</string>
+    <string name="secundariaTxt">Secondary Weapon</string>
+    <string name="primariaTxt">Primary Weapon</string>
+    <string name="subirTxt">Upload</string>
+    <string name="default_web_client_id">181421282560-eabinikk13cq97caf9ekmss62ogehm9n.apps.googleusercontent.com</string>
+    <string name="estadotxt">Status</string>
+    <string name="buildstxtbtn">Builds</string>
+    <string name="subirtxt">Upload</string>
+    <string name="ordenestxtbtn">Orders</string>
+    <string name="faccionTxt">Faction</string>
+    <string name="nobuildsTxt">No builds yet</string>
+    <string name="libTxt">Liberation</string>
+    <string name="termTxt">Termínids</string>
+    <string name="illTxt">Illuminates</string>
+    <string name="botsTxt">Bots</string>
+    <string name="hintEtTxt">Build Name</string>
+    <string name="tittxt">Title</string>
+    <string name="codestratTxt">Stratagem Code</string>
+    <string name="c_digo_de_lanzamiento_txt">Launch Code</string>
+    <string name="no_hay_major_orders_disponibles">No Major Orders available</string>
+    <string name="elegir_cuenta">Choose Account</string>
+    <string name="cerrar_sesi_n">Log Out</string>
+    <string name="app_description">Version 1.00, Helldivers Build Hub.</string>
+    <string name="logout">Log Out</string>
+    <string name="app_version_label">1.00</string>
+    <string name="app_author_label">Javi Coronel</string>
+    <string name="app_information">Helldivers Build Hub Android</string>
+    <string name="loading">Loading...</string>
+
+    -->
+</resources>

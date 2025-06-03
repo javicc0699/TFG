@@ -8,4 +8,6 @@ public interface ApiService {
     @GET("api/v1/war/campaign")
     Call<List<Planet>> getPlanets();
 
+    @GET("api/v1/war/major-orders")
+    Call<List<MajorOrder>> getMajorOrders();
 }

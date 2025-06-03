@@ -22,4 +22,10 @@
         android:icon="@drawable/major_orders_unselected"
         android:fontFamily="@font/orbitron_regular"
         android:title="@string/ordenestxtbtn" />
+
+    <item
+        android:id="@+id/frag5"
+        android:icon="@drawable/ic_person_circle"
+        android:fontFamily="@font/orbitron_regular"
+        android:title="@string/perfil" />
 </menu>

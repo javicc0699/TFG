@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="black">#FF000000</color>
+    <color name="black">#000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="background_gradient_start">#000000</color>
     <color name="background_gradient_end">#FFEA00</color>
@@ -22,7 +22,7 @@
     <color name="bots_color_borde">#c40000</color>
 
     <!-- Colores por defecto !-->
-    <color name="default_fondo">#FFFFFF</color>
+    <color name="default_fondo">#000000</color>
     <color name="default_borde">#CCCCCC</color>
 
 
@@ -42,5 +42,6 @@
     <color name="helldivers_purple">#A972FF</color>
     <color name="helldivers_dark">#2E2E2E</color>
     <color name="reset_btn">#C84F4F</color>
+    <color name="supertierraazul">#41639C</color>
 
 </resources>

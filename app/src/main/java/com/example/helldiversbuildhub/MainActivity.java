@@ -77,6 +77,8 @@ public class MainActivity extends AppCompatActivity {
                 fragment = new UploadFragment();
             } else if (id == R.id.frag4) {
                 fragment = new OrdersFragment();
+            }  else if (id == R.id.frag5) {
+                fragment = new UserFragment();
             }
 
             if (fragment != null) {
@@ -87,10 +89,10 @@ public class MainActivity extends AppCompatActivity {
         });
 
 
-// Carga la fuente personalizada
+// Esto carga la fuente personalizada
         Typeface orbitron = ResourcesCompat.getFont(this, R.font.orbitron_bold);
 
-// Recorre todos los ítems del bottomnavigationview
+// Recorre todos los ítems del bottomnavigationview aplicando la fuente usando el metodo setFontToViewGroup
         for (int i = 0; i < bottomNavigationView.getMenu().size(); i++) {
             final MenuItem item = bottomNavigationView.getMenu().getItem(i);
 

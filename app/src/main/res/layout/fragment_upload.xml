@@ -1,281 +1,305 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/upload_root"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:layout_marginTop="32dp"
-    tools:context=".UploadFragment">
+    android:layout_height="match_parent">
 
-    <LinearLayout
+
+    <ImageView
+        android:id="@+id/bgUpload"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:padding="16dp">
+        android:layout_height="match_parent"
+        android:src="@drawable/builds_background"
+        android:scaleType="centerCrop" />
 
-        <!-- Spinner Estratagemos -->
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
 
-            <Spinner
-                android:id="@+id/firstStratSpn"
-                android:layout_width="0dp"
-                android:layout_height="40dp"
-                android:layout_marginEnd="8dp"
-                android:layout_weight="1"
-                android:background="@drawable/spinner_fondo"
-                android:padding="4dp"
-                android:popupBackground="@drawable/spinner_fondo"
-                android:spinnerMode="dialog" />
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#80000000" />
 
-            <Spinner
-                android:id="@+id/secondStratSpn"
-                android:layout_width="0dp"
-                android:layout_height="40dp"
-                android:layout_marginStart="8dp"
-                android:layout_weight="1"
-                android:background="@drawable/spinner_fondo"
-                android:padding="4dp"
-                android:popupBackground="@drawable/spinner_fondo"
-                android:spinnerMode="dialog" />
-        </LinearLayout>
 
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="40dp"
+        android:fillViewport="true"
+        android:fitsSystemWindows="true"
+        android:padding="16dp"
+        tools:context=".UploadFragment">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:orientation="horizontal">
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:orientation="vertical">
 
-            <Spinner
-                android:id="@+id/thirdStratSpn"
-                android:layout_width="0dp"
-                android:layout_height="40dp"
-                android:layout_marginEnd="8dp"
-                android:layout_weight="1"
-                android:background="@drawable/spinner_fondo"
-                android:padding="4dp"
-                android:popupBackground="@drawable/spinner_fondo"
-                android:spinnerMode="dialog" />
-
-            <Spinner
-                android:id="@+id/fourthStratSpn"
-                android:layout_width="0dp"
-                android:layout_height="40dp"
-                android:layout_marginStart="8dp"
-                android:layout_weight="1"
-                android:background="@drawable/spinner_fondo"
-                android:padding="4dp"
-                android:popupBackground="@drawable/spinner_fondo"
-                android:spinnerMode="dialog" />
-        </LinearLayout>
-
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:orientation="horizontal">
-
-            <ImageView
-                android:id="@+id/firstStratImg"
-                android:layout_width="0dp"
-                android:layout_height="70dp"
-                android:layout_margin="4dp"
-                android:layout_weight="1"
-                android:adjustViewBounds="true"
-                android:src="@drawable/recuadro" />
-
-            <ImageView
-                android:id="@+id/secondStratImg"
-                android:layout_width="0dp"
-                android:layout_height="70dp"
-                android:layout_margin="4dp"
-                android:layout_weight="1"
-                android:adjustViewBounds="true"
-                android:src="@drawable/recuadro" />
-
-            <ImageView
-                android:id="@+id/thirdStratImg"
-                android:layout_width="0dp"
-                android:layout_height="70dp"
-                android:layout_margin="4dp"
-                android:layout_weight="1"
-                android:adjustViewBounds="true"
-                android:src="@drawable/recuadro" />
-
-            <ImageView
-                android:id="@+id/fourthStratImg"
-                android:layout_width="0dp"
-                android:layout_height="70dp"
-                android:layout_margin="4dp"
-                android:layout_weight="1"
-                android:adjustViewBounds="true"
-                android:src="@drawable/recuadro" />
-        </LinearLayout>
-
-        <!-- Arma Primaria -->
-        <TextView
-            android:id="@+id/textPrimaryLabel"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:fontFamily="@font/orbitron_bold"
-            android:text="@string/primariaTxt"
-            android:textStyle="bold" />
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-
-            <Spinner
-                android:id="@+id/primaryWpnSpn"
-                android:layout_width="0dp"
-                android:layout_height="40dp"
-                android:layout_marginTop="16dp"
-                android:layout_marginEnd="8dp"
-                android:layout_weight="1"
-                android:background="@drawable/spinner_fondo"
-                android:padding="4dp"
-                android:popupBackground="@drawable/spinner_fondo"
-                android:spinnerMode="dialog" />
-
-            <ImageView
-                android:id="@+id/primaryWpnImg"
-                android:layout_width="115dp"
-                android:layout_height="70dp"
-                android:adjustViewBounds="true"
-                android:src="@drawable/bordearmas" />
-        </LinearLayout>
-
-        <!-- Arma Secundaria -->
-        <TextView
-            android:id="@+id/textSecondaryLabel"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:fontFamily="@font/orbitron_bold"
-            android:text="@string/secundariaTxt"
-            android:textStyle="bold" />
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-
-            <Spinner
-                android:id="@+id/secondaryWpnSpn"
-                android:layout_width="0dp"
-                android:layout_height="40dp"
-                android:layout_marginTop="16dp"
-                android:layout_marginEnd="8dp"
-                android:layout_weight="1"
-                android:background="@drawable/spinner_fondo"
-                android:padding="4dp"
-                android:popupBackground="@drawable/spinner_fondo"
-                android:spinnerMode="dialog" />
-
-            <ImageView
-                android:id="@+id/secondaryWpnImg"
-                android:layout_width="115dp"
-                android:layout_height="70dp"
-                android:adjustViewBounds="true"
-                android:src="@drawable/bordearmas" />
-        </LinearLayout>
-
-        <!-- Pasivas de las armaduras -->
-        <TextView
-            android:id="@+id/textArmorLabel"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:fontFamily="@font/orbitron_bold"
-            android:text="@string/pasivaTxt"
-            android:textStyle="bold" />
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-
-            <Spinner
-                android:id="@+id/armorPassiveSpn"
-                android:layout_width="0dp"
-                android:layout_height="40dp"
-                android:layout_marginTop="16dp"
-                android:layout_marginEnd="8dp"
-                android:layout_weight="1"
-                android:background="@drawable/spinner_fondo"
-                android:padding="4dp"
-                android:popupBackground="@drawable/spinner_fondo"
-                android:spinnerMode="dialog" />
-
-            <ImageView
-                android:id="@+id/armorPassiveImg"
-                android:layout_width="70dp"
-                android:layout_height="70dp"
-                android:adjustViewBounds="true"
-                android:src="@drawable/recuadroarm" />
-        </LinearLayout>
-
-        <!-- Potenciadores -->
-        <TextView
-            android:id="@+id/textBoosterLabel"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:fontFamily="@font/orbitron_bold"
-            android:text="@string/potenciadorEsp"
-            android:textStyle="bold" />
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="8dp"
-            android:orientation="horizontal">
-
-            <Spinner
-                android:id="@+id/boosterSpn"
-                android:layout_width="0dp"
-                android:layout_height="40dp"
-                android:layout_marginTop="16dp"
-                android:layout_marginEnd="8dp"
-                android:layout_weight="1"
-                android:background="@drawable/spinner_fondo"
-                android:padding="4dp"
-                android:popupBackground="@drawable/spinner_fondo"
-                android:spinnerMode="dialog" />
-
-            <ImageView
-                android:id="@+id/boosterImg"
-                android:layout_width="70dp"
-                android:layout_height="70dp"
-                android:adjustViewBounds="true"
-                android:src="@drawable/plantillabooster" />
-        </LinearLayout>
-
-        <!-- Botones -->
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="24dp"
-            android:orientation="horizontal">
-
-            <Button
-                android:id="@+id/uploadBtn"
-                android:layout_width="0dp"
+            <!-- Spinner Estratagemas primera fila-->
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="8dp"
-                android:layout_weight="1"
-                android:backgroundTint="@color/helldivers_yellow"
-                android:fontFamily="@font/orbitron_black"
-                android:text="@string/subirTxt"
-                android:textColor="#000000"
-                app:cornerRadius="5dp" />
-        </LinearLayout>
+                android:orientation="horizontal">
 
-    </LinearLayout>
-</ScrollView>
+                <Spinner
+                    android:id="@+id/firstStratSpn"
+                    android:layout_width="0dp"
+                    android:layout_height="40dp"
+                    android:layout_marginEnd="8dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/spinner_fondo"
+                    android:padding="4dp"
+                    android:popupBackground="@drawable/spinner_fondo"
+                    android:spinnerMode="dialog" />
+
+                <Spinner
+                    android:id="@+id/secondStratSpn"
+                    android:layout_width="0dp"
+                    android:layout_height="40dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/spinner_fondo"
+                    android:padding="4dp"
+                    android:popupBackground="@drawable/spinner_fondo"
+                    android:spinnerMode="dialog" />
+            </LinearLayout>
+
+            <!-- Spinner Estratagemas segunda fila -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:orientation="horizontal">
+
+                <Spinner
+                    android:id="@+id/thirdStratSpn"
+                    android:layout_width="0dp"
+                    android:layout_height="40dp"
+                    android:layout_marginEnd="8dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/spinner_fondo"
+                    android:padding="4dp"
+                    android:popupBackground="@drawable/spinner_fondo"
+                    android:spinnerMode="dialog" />
+
+                <Spinner
+                    android:id="@+id/fourthStratSpn"
+                    android:layout_width="0dp"
+                    android:layout_height="40dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/spinner_fondo"
+                    android:padding="4dp"
+                    android:popupBackground="@drawable/spinner_fondo"
+                    android:spinnerMode="dialog" />
+            </LinearLayout>
+
+            <!-- Imágenes de Estratagemas -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/firstStratImg"
+                    android:layout_width="0dp"
+                    android:layout_height="70dp"
+                    android:layout_margin="4dp"
+                    android:layout_weight="1"
+                    android:adjustViewBounds="true"
+                    android:src="@drawable/recuadro" />
+
+                <ImageView
+                    android:id="@+id/secondStratImg"
+                    android:layout_width="0dp"
+                    android:layout_height="70dp"
+                    android:layout_margin="4dp"
+                    android:layout_weight="1"
+                    android:adjustViewBounds="true"
+                    android:src="@drawable/recuadro" />
+
+                <ImageView
+                    android:id="@+id/thirdStratImg"
+                    android:layout_width="0dp"
+                    android:layout_height="70dp"
+                    android:layout_margin="4dp"
+                    android:layout_weight="1"
+                    android:adjustViewBounds="true"
+                    android:src="@drawable/recuadro" />
+
+                <ImageView
+                    android:id="@+id/fourthStratImg"
+                    android:layout_width="0dp"
+                    android:layout_height="70dp"
+                    android:layout_margin="4dp"
+                    android:layout_weight="1"
+                    android:adjustViewBounds="true"
+                    android:src="@drawable/recuadro" />
+            </LinearLayout>
+
+            <!-- Arma Primaria -->
+            <TextView
+                android:id="@+id/textPrimaryLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:fontFamily="@font/orbitron_bold"
+                android:text="@string/primariaTxt"
+                android:textStyle="bold" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <Spinner
+                    android:id="@+id/primaryWpnSpn"
+                    android:layout_width="0dp"
+                    android:layout_height="40dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginEnd="8dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/spinner_fondo"
+                    android:padding="4dp"
+                    android:popupBackground="@drawable/spinner_fondo"
+                    android:spinnerMode="dialog" />
+
+                <ImageView
+                    android:id="@+id/primaryWpnImg"
+                    android:layout_width="115dp"
+                    android:layout_height="70dp"
+                    android:adjustViewBounds="true"
+                    android:src="@drawable/bordearmas" />
+            </LinearLayout>
+
+            <!-- Arma Secundaria -->
+            <TextView
+                android:id="@+id/textSecondaryLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:fontFamily="@font/orbitron_bold"
+                android:text="@string/secundariaTxt"
+                android:textStyle="bold" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <Spinner
+                    android:id="@+id/secondaryWpnSpn"
+                    android:layout_width="0dp"
+                    android:layout_height="40dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginEnd="8dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/spinner_fondo"
+                    android:padding="4dp"
+                    android:popupBackground="@drawable/spinner_fondo"
+                    android:spinnerMode="dialog" />
+
+                <ImageView
+                    android:id="@+id/secondaryWpnImg"
+                    android:layout_width="115dp"
+                    android:layout_height="70dp"
+                    android:adjustViewBounds="true"
+                    android:src="@drawable/bordearmas" />
+            </LinearLayout>
+
+            <!-- Pasivas de las armaduras -->
+            <TextView
+                android:id="@+id/textArmorLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:fontFamily="@font/orbitron_bold"
+                android:text="@string/pasivaTxt"
+                android:textStyle="bold" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <Spinner
+                    android:id="@+id/armorPassiveSpn"
+                    android:layout_width="0dp"
+                    android:layout_height="40dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginEnd="8dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/spinner_fondo"
+                    android:padding="4dp"
+                    android:popupBackground="@drawable/spinner_fondo"
+                    android:spinnerMode="dialog" />
+
+                <ImageView
+                    android:id="@+id/armorPassiveImg"
+                    android:layout_width="70dp"
+                    android:layout_height="70dp"
+                    android:adjustViewBounds="true"
+                    android:src="@drawable/recuadroarm" />
+            </LinearLayout>
+
+            <!-- Potenciadores -->
+            <TextView
+                android:id="@+id/textBoosterLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:fontFamily="@font/orbitron_bold"
+                android:text="@string/potenciadorEsp"
+                android:textStyle="bold" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:orientation="horizontal">
+
+                <Spinner
+                    android:id="@+id/boosterSpn"
+                    android:layout_width="0dp"
+                    android:layout_height="40dp"
+                    android:layout_marginEnd="8dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/spinner_fondo"
+                    android:padding="4dp"
+                    android:popupBackground="@drawable/spinner_fondo"
+                    android:spinnerMode="dialog" />
+
+                <ImageView
+                    android:id="@+id/boosterImg"
+                    android:layout_width="70dp"
+                    android:layout_height="70dp"
+                    android:adjustViewBounds="true"
+                    android:src="@drawable/plantillabooster" />
+            </LinearLayout>
+
+            <!-- Botones -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/uploadBtn"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_weight="1"
+                    android:backgroundTint="@color/helldivers_yellow"
+                    android:fontFamily="@font/orbitron_black"
+                    android:text="@string/subirTxt"
+                    android:textColor="#000000"
+                    app:cornerRadius="5dp" />
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+</FrameLayout>

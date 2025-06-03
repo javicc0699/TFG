@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/cardMajorOrder"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="8dp"
+    app:cardBackgroundColor="@color/black"
+    app:cardCornerRadius="3dp"
+    app:cardElevation="6dp"
+    app:cardUseCompatPadding="true"
+    app:strokeColor="@color/default_borde"
+    app:strokeWidth="2dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="12dp">
+
+        <!-- Primera fila: icono default + título de la Major Order -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <!-- Icono default tintado de amarillo -->
+            <ImageView
+                android:id="@+id/helmetIcon"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@drawable/helldiver_logo"
+                android:tint="@color/helldivers_yellow" />
+
+            <TextView
+                android:id="@+id/titleTv"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="6dp"
+                android:layout_weight="1"
+                android:ellipsize="end"
+                android:fontFamily="@font/orbitron_black"
+                android:maxLines="1"
+                android:text="MAJOR ORDER"
+                android:textColor="@color/helldivers_yellow"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:id="@+id/factionIcon"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:visibility="gone" />
+        </LinearLayout>
+
+
+        <TextView
+            android:id="@+id/briefTv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:fontFamily="@font/orbitron_semibold"
+            android:text="The Supercolony has caused sudden outbreaks..."
+            android:textColor="@color/helldivers_yellow"
+            android:textSize="14sp" />
+
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"
+            android:background="@color/default_borde" />
+
+
+        <TextView
+            android:id="@+id/descriptionTv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/orbitron_regular"
+            android:text="Liberate all designated planets."
+            android:textColor="@color/helldivers_yellow"
+            android:textSize="13sp" />
+
+        <TextView
+            android:id="@+id/rewardTv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:fontFamily="@font/orbitron_regular"
+            android:text="Recompensa: 40"
+            android:textColor="@color/helldivers_yellow"
+            android:textSize="13sp" />
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/progressTv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/orbitron_semibold"
+                android:text="Progreso: 75%"
+                android:textColor="@color/helldivers_yellow"
+                android:textSize="13sp" />
+
+            <ProgressBar
+                android:id="@+id/progressBar"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="0dp"
+                android:layout_height="8dp"
+                android:layout_marginStart="8dp"
+                android:layout_weight="1"
+                android:max="100"
+                android:progress="75"
+                android:progressBackgroundTint="@color/helldivers_dark"
+                android:progressTint="@color/helldivers_yellow_otro"
+                android:secondaryProgressTint="@color/helldivers_purple" />
+        </LinearLayout>
+
+
+        <TextView
+            android:id="@+id/expiresTv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:fontFamily="@font/orbitron_regular"
+            android:text="Termina en: 12069s"
+            android:textColor="@android:color/white"
+            android:textSize="12sp" />
+    </LinearLayout>
+</com.google.android.material.card.MaterialCardView>

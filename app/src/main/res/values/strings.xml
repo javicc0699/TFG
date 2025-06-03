@@ -26,6 +26,17 @@
     <string name="hintEtTxt">Nombre de la build</string>
     <string name="tittxt">Título</string>
     <string name="codestratTxt">Código de la estratagema</string>
+    <string name="c_digo_de_lanzamiento_txt">Código de lanzamiento</string>
+    <string name="no_hay_major_orders_disponibles">No hay Major Orders disponibles</string>
+    <string name="elegir_cuenta">Elegir cuenta</string>
+    <string name="cerrar_sesi_n">Cerrar sesión</string>
+    <string name="app_description">Versión 1.00, Helldivers BuildHub.</string>
+    <string name="logout">Cerrar Sesión</string>
+    <string name="app_version_label">1.00</string>
+    <string name="app_author_label">Javi Coronel</string>
+    <string name="app_information">Helldivers BuildHub Android</string>
+    <string name="loading">Cargando...</string>
+    <string name="perfil">Perfil</string>
 
 
 </resources>
