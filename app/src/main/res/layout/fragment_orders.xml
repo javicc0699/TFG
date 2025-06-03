@@ -28,7 +28,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
-            <!-- ProgressBar central mientras carga -->
+
             <ProgressBar
                 android:id="@+id/loadingPb"
                 style="?android:attr/progressBarStyleLarge"
@@ -36,7 +36,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center" />
 
-            <!-- Texto “No hay Major Orders disponibles” -->
+
             <TextView
                 android:id="@+id/emptyTv"
                 android:layout_width="match_parent"
@@ -47,7 +47,7 @@
                 android:textColor="@android:color/white"
                 android:visibility="gone" />
 
-            <!-- RecyclerView para mostrar lista de órdenes -->
+
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/recyclerOrders"
                 android:layout_width="match_parent"
