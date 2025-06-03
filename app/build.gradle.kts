@@ -49,6 +49,7 @@ dependencies {
     implementation(libs.leanback)
     implementation(libs.glide)
     implementation(libs.firebase.firestore)
+    implementation(libs.junit.junit)
     testImplementation(libs.junit)
     implementation("androidx.core:core:1.9.0")
     implementation("com.google.android.material:material:1.10.0")
