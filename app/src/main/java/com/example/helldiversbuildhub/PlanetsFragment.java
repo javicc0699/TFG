@@ -43,7 +43,7 @@ public class PlanetsFragment extends Fragment {
         recyclerView = view.findViewById(R.id.planetsRV);
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
 
-        // Se inicializa el adapter con lista vacía mutable
+        // Se inicializa el adapter con lista vacía cambiable
         adapter = new PlanetAdapter(new ArrayList<>());
         recyclerView.setAdapter(adapter);
 

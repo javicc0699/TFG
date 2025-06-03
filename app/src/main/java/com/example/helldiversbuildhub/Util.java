@@ -73,25 +73,4 @@ public class Util {
                 .addOnFailureListener(err -> Log.e("Util", "Error al votar", err));
     }
 
-
-    /**
-     *
-     * Qué hace cada método
-     *
-     * mapFromArrays(...):
-     *
-     * Lee un string-array de tu arrays-es.xml.
-     *
-     * Lee un TypedArray de iconos/drawables.
-     *
-     * Empareja index a index (nombre → drawable resource ID).
-     *
-     * Devuelve un Map<String,Integer> para buscar rápidamente el icono por nombre.
-     *
-     * incrementField(...):
-     *
-     * Obtiene instancia de FirebaseFirestore.
-     *
-     * Actualiza el documento docId en la colección collectionPath, incrementando el campo field con FieldValue.increment(1).
-     */
 }

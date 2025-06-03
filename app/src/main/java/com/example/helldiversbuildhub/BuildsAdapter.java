@@ -20,11 +20,13 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+// Adaptador para mostrar la lista de builds en un RecyclerView
 public class BuildsAdapter extends RecyclerView.Adapter<BuildsAdapter.BuildsViewHolder> {
 
     private final Context context;
     private final List<Build> items;
 
+    // Mapas para relacionar nombres con recursos (íconos o códigos)
     private final Map<String, Integer> estratagemasMap;
     private final Map<String, String> estratagemasCodigosMap;
     private final Map<String, Integer> primariaMap;
@@ -33,10 +35,12 @@ public class BuildsAdapter extends RecyclerView.Adapter<BuildsAdapter.BuildsView
     private final Map<String, Integer> potenciadorMap;
     private final Map<String, Integer> faccionMap;
 
+    // Constructor del adaptador
     public BuildsAdapter(Context context, List<Build> items) {
         this.context = context;
         this.items = items;
 
+        // Crea los mapas a partir de arrays definidos en resources
         estratagemasMap = Util.mapFromArrays(context, R.array.estratagemas_nombre, R.array.estratagemas_iconos);
         primariaMap = Util.mapFromArrays(context, R.array.armas_primarias, R.array.armas_primarias_iconos);
         secundariaMap = Util.mapFromArrays(context, R.array.armas_secundarias, R.array.armas_secundarias_iconos);
@@ -44,7 +48,7 @@ public class BuildsAdapter extends RecyclerView.Adapter<BuildsAdapter.BuildsView
         potenciadorMap = Util.mapFromArrays(context, R.array.potenciadores_nombres, R.array.potenciadores_iconos);
         faccionMap = Util.mapFromArrays(context, R.array.facciones_nombres, R.array.facciones_iconos);
 
-        // COdigo para linkear las estratagemas con sus codigos
+        // Inicializa el mapa de códigos para las estratagemas
         estratagemasCodigosMap = new HashMap<>();
         String[] nombres = context.getResources().getStringArray(R.array.estratagemas_nombre);
         String[] infos = context.getResources().getStringArray(R.array.estratagemas_codigos);
@@ -56,6 +60,7 @@ public class BuildsAdapter extends RecyclerView.Adapter<BuildsAdapter.BuildsView
     @NonNull
     @Override
     public BuildsViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+        // Infla el layout de cada ítem de build
         View view = LayoutInflater.from(context)
                 .inflate(R.layout.build_item, parent, false);
         return new BuildsViewHolder(view);
@@ -65,34 +70,37 @@ public class BuildsAdapter extends RecyclerView.Adapter<BuildsAdapter.BuildsView
     public void onBindViewHolder(@NonNull BuildsViewHolder holder, int position) {
         Build build = items.get(position);
 
+        // Rellena los TextView con usuario, fecha y contadores
         holder.usernameTv.setText(build.username);
         holder.dateTv.setText(build.date);
         holder.likeCountTv.setText(String.valueOf(build.likes));
         holder.dislikeCountTv.setText(String.valueOf(build.dislikes));
 
-        // Facción
+        // Asigna el ícono de la facción (si existe)
         Integer fIcon = faccionMap.get(build.faction);
         if (fIcon != null) holder.factionIv.setImageResource(fIcon);
         else holder.factionIv.setImageDrawable(null);
 
-        // Estratagemas (null-safe)
+        // Manejo de estratagemas (nulo seguro)
         List<String> strats = build.stratagems != null
                 ? build.stratagems
                 : Collections.emptyList();
-        // Primero limpia todas las imágenes y listeners
+
+        // Limpia las imágenes y listeners anteriores
         for (ImageView iv : holder.stratIvs) {
             iv.setImageDrawable(null);
             iv.setOnClickListener(null);
         }
-        // Luego rellena solo las que existan en la lista y asigna el diálogo
+
+        // Rellena cada estratagema y asigna un listener para mostrar su código
         for (int i = 0; i < strats.size() && i < holder.stratIvs.length; i++) {
             String nombreEstr = strats.get(i);
             Integer icono = estratagemasMap.get(nombreEstr);
             if (icono != null) {
                 holder.stratIvs[i].setImageResource(icono);
-                // Al hacer clic, mostramos un AlertDialog con la instrucción
                 String instruccion = estratagemasCodigosMap.get(nombreEstr);
                 holder.stratIvs[i].setOnClickListener(view -> {
+                    // Muestra un diálogo con la instrucción de lanzamiento
                     new AlertDialog.Builder(view.getContext(), R.style.Theme_Helldivers_Dialog)
                             .setTitle(nombreEstr)
                             .setMessage(instruccion != null
@@ -104,18 +112,20 @@ public class BuildsAdapter extends RecyclerView.Adapter<BuildsAdapter.BuildsView
             }
         }
 
-        // Armas, pasiva y potenciador (null-safe con getOrDefault para que no crashee si pasa algo)
+
         holder.primariaIv.setImageResource(primariaMap.getOrDefault(build.primaryWeapon, 0));
         holder.secundariaIv.setImageResource(secundariaMap.getOrDefault(build.secondaryWeapon, 0));
         holder.armorIv.setImageResource(pasivaArmMap.getOrDefault(build.armorPassive, 0));
         holder.potenciadorIv.setImageResource(potenciadorMap.getOrDefault(build.booster, 0));
 
-        // Listeners de like/dislike que llaman a Util.votarBuild(...)
+
         holder.likeBtn.setOnClickListener(v -> {
             holder.likeBtn.setEnabled(false);
             String uid = FirebaseAuth.getInstance().getCurrentUser().getUid();
             Util.votarBuild(build.id, uid, "like");
         });
+
+        // Listener para “dislike”: deshabilita botón y llama al metodo de voto
         holder.dislikeBtn.setOnClickListener(v -> {
             holder.dislikeBtn.setEnabled(false);
             String uid = FirebaseAuth.getInstance().getCurrentUser().getUid();
