@@ -93,15 +93,6 @@
                 android:textStyle="bold" />
 
             <TextView
-                android:id="@+id/appVersion"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="8dp"
-                android:text="@string/app_version_label"
-                android:textColor="@android:color/white"
-                android:textSize="14sp" />
-
-            <TextView
                 android:id="@+id/appAuthor"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
