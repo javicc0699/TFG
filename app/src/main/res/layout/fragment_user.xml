@@ -1,30 +1,42 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/profile_root"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-
     <ImageView
         android:id="@+id/bgProfile"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:scaleType="centerCrop"
         android:src="@drawable/profile_bckgrnd"
-        android:scaleType="centerCrop" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
 
 
     <View
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="#80000000" />
+        android:id="@+id/overlay"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="#80000000"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
 
 
     <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         android:fitsSystemWindows="true"
         android:padding="24dp"
-        android:fillViewport="true">
+        android:fillViewport="true"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -32,7 +44,6 @@
             android:layout_marginTop="32dp"
             android:gravity="center_horizontal"
             android:orientation="vertical">
-
 
             <ImageView
                 android:id="@+id/profileImage"
@@ -42,7 +53,6 @@
                 android:padding="2dp"
                 android:scaleType="centerCrop"
                 android:src="@drawable/ic_person_circle" />
-
 
             <TextView
                 android:id="@+id/profileName"
@@ -56,7 +66,6 @@
                 android:textSize="20sp"
                 android:textStyle="bold" />
 
-
             <TextView
                 android:id="@+id/profileEmail"
                 android:layout_width="wrap_content"
@@ -65,14 +74,12 @@
                 android:textColor="@android:color/white"
                 android:textSize="14sp" />
 
-
             <View
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
                 android:layout_marginTop="24dp"
                 android:layout_marginBottom="24dp"
                 android:background="@color/default_borde" />
-
 
             <TextView
                 android:id="@+id/appInfoTitle"
@@ -113,7 +120,6 @@
                 android:textColor="@android:color/white"
                 android:textSize="14sp" />
 
-
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/btnLogoutProfile"
                 style="@style/Widget.MaterialComponents.Button"
@@ -127,4 +133,5 @@
                 android:textColor="@color/helldivers_yellow" />
         </LinearLayout>
     </ScrollView>
-</FrameLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
