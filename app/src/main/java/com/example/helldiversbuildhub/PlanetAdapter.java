@@ -58,7 +58,7 @@ public class PlanetAdapter extends RecyclerView.Adapter<PlanetAdapter.PlanetView
                 iconRes = R.drawable.terminid_icon;
                 break;
 
-            case "Super Earth":
+            case "Illuminates":
                 bgColor = ContextCompat.getColor(holder.itemView.getContext(), R.color.iluminados_color_fondo);
                 borderColor = ContextCompat.getColor(holder.itemView.getContext(), R.color.iluminados_color_borde);
                 iconRes = R.drawable.illuminate_logo;
